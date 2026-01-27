@@ -19,7 +19,7 @@ export default function ContactPage() {
                             언제든지 연락 주세요!
                         </p>
                         <div className="bg-white border-2 border-black p-4 inline-block">
-                            <p className="font-bold text-xl">contact@lifecheatkey.com</p>
+                            <p className="font-bold text-xl">miran2252@naver.com</p>
                         </div>
                     </section>
 
@@ -63,7 +63,7 @@ export default function ContactPage() {
                             광고 문의, 제휴 제안, 기타 비즈니스 관련 문의는 아래 이메일로 연락 주세요.
                         </p>
                         <div className="bg-gray-100 border-2 border-black p-4 inline-block">
-                            <p className="font-bold">business@lifecheatkey.com</p>
+                            <p className="font-bold">miran2252@naver.com</p>
                         </div>
                     </section>
 
