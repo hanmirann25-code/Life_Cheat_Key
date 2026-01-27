@@ -3,9 +3,59 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "인생 치트키 | Life Cheat Key",
-  description: "복잡한 인생, 클릭 몇 번으로 쉽게 풀자",
-  keywords: ["대출계산기", "이자계산", "금융", "시뮬레이터", "생활정보"],
+  title: {
+    default: "인생 치트키 | Life Cheat Key",
+    template: "%s | 인생 치트키"
+  },
+  description: "복잡한 인생, 클릭 몇 번으로 쉽게 풀자. 대출 계산기, 점심 메뉴 추천, AI 작가 등 유용한 도구 모음",
+  keywords: [
+    "대출계산기",
+    "이자계산",
+    "금융계산기",
+    "점심메뉴추천",
+    "점심슬롯머신",
+    "AI작가",
+    "거절멘트생성기",
+    "월급계산기",
+    "실수령액계산",
+    "생활정보",
+    "유용한사이트",
+    "인생치트키"
+  ],
+  authors: [{ name: "인생 치트키" }],
+  creator: "인생 치트키",
+  publisher: "인생 치트키",
+  metadataBase: new URL('https://life-cheat-key.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://life-cheat-key.vercel.app',
+    title: '인생 치트키 | Life Cheat Key',
+    description: '복잡한 인생, 클릭 몇 번으로 쉽게 풀자. 대출 계산기, 점심 메뉴 추천, AI 작가 등 유용한 도구 모음',
+    siteName: '인생 치트키',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '인생 치트키 | Life Cheat Key',
+    description: '복잡한 인생, 클릭 몇 번으로 쉽게 풀자',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'google-site-verification-code', // Google Search Console에서 발급받은 코드로 교체
+  },
 };
 
 export default function RootLayout({
@@ -16,6 +66,38 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="min-h-screen bg-white">
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: '인생 치트키',
+              url: 'https://life-cheat-key.vercel.app',
+              description: '복잡한 인생, 클릭 몇 번으로 쉽게 풀자. 대출 계산기, 점심 메뉴 추천, AI 작가 등 유용한 도구 모음',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: 'https://life-cheat-key.vercel.app/?q={search_term_string}',
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: '인생 치트키',
+              url: 'https://life-cheat-key.vercel.app',
+              logo: 'https://life-cheat-key.vercel.app/logo.png',
+              sameAs: [],
+            }),
+          }}
+        />
+
         <Header />
 
         <main>
@@ -46,6 +128,25 @@ export default function RootLayout({
                   <span className="w-3 h-3 bg-gray-600 rounded-full"></span>
                   더 많은 기능 🔜
                 </span>
+              </div>
+
+              {/* Footer Links */}
+              <div className="flex flex-wrap justify-center gap-4 text-sm pt-6 border-t border-gray-700">
+                <a href="/about" className="hover:text-neon-yellow transition-colors">
+                  사이트 소개
+                </a>
+                <span className="text-gray-600">|</span>
+                <a href="/privacy" className="hover:text-neon-yellow transition-colors">
+                  개인정보 처리방침
+                </a>
+                <span className="text-gray-600">|</span>
+                <a href="/terms" className="hover:text-neon-yellow transition-colors">
+                  이용약관
+                </a>
+                <span className="text-gray-600">|</span>
+                <a href="/contact" className="hover:text-neon-yellow transition-colors">
+                  연락처
+                </a>
               </div>
             </div>
           </div>
