@@ -59,22 +59,18 @@ export default function EventCalendarPage() {
             const response = await fetch(`/api/tour?eventMonth=${eventMonth}`);
 
             if (!response.ok) {
-                throw new Error("API 요청 실패");
+                const errorData = await response.json();
+                throw new Error(errorData.error || `에러 코드: ${response.status}`);
             }
 
             const data = await response.json();
 
-            // 에러 응답 체크
-            if (data.error) {
-                throw new Error(data.error);
-            }
-
             const items = data.response?.body?.items?.item || [];
 
-            // 배열이 아닌 경우 배열로 변환
+            // ... (기존 변환 로직 동일)
+
             const eventArray = Array.isArray(items) ? items : items ? [items] : [];
 
-            // Tour API 데이터를 우리 형식으로 변환
             const formattedEvents: Event[] = eventArray.map((item: TourEvent, index: number) => {
                 const category = getCategoryFromTitle(item.title);
                 const emojis = categoryEmojis[category] || ["🎉"];
@@ -94,8 +90,8 @@ export default function EventCalendarPage() {
             });
 
             setEvents(formattedEvents);
-        } catch (err) {
-            setError("❌ 데이터를 불러오는데 실패했습니다.");
+        } catch (err: any) {
+            setError(`❌ ${err.message || "데이터를 불러오는데 실패했습니다."}`);
             console.error(err);
             setEvents([]);
         } finally {
