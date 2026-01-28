@@ -18,9 +18,13 @@ export async function GET(request: NextRequest) {
     const apiKey = process.env.TOUR_API_KEY || process.env.NEXT_PUBLIC_TOUR_API_KEY;
 
     if (!apiKey) {
-        console.error("❌ Tour API 키가 설정되지 않았습니다. 환경 변수를 확인하세요.");
+        console.error("❌ Tour API 키가 설정되지 않았습니다.");
+        console.error("환경 변수 확인:", {
+            TOUR_API_KEY: process.env.TOUR_API_KEY ? "설정됨" : "없음",
+            NEXT_PUBLIC_TOUR_API_KEY: process.env.NEXT_PUBLIC_TOUR_API_KEY ? "설정됨" : "없음"
+        });
         return NextResponse.json({ 
-            error: "Tour API 키가 설정되지 않았습니다. 서버 관리자에게 문의하세요." 
+            error: "Tour API 키가 설정되지 않았습니다. Vercel 환경 변수에 TOUR_API_KEY를 추가해주세요." 
         }, { status: 500 });
     }
 
