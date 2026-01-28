@@ -24,7 +24,6 @@ export default function Header() {
                         <NavLink href="/#choice" label="🎲 게임" />
                         <NavLink href="/#info" label="📍 정보" />
                         <NavLink href="/#ai" label="🤖 AI" />
-                        <NavLink href="/settings" label="⚙️ 설정" />
                     </nav>
 
                     {/* Mobile Menu Button */}
@@ -51,7 +50,6 @@ export default function Header() {
                             <MobileNavLink href="/#choice" label="🎲 게임" onClick={() => setMobileMenuOpen(false)} />
                             <MobileNavLink href="/#info" label="📍 정보" onClick={() => setMobileMenuOpen(false)} />
                             <MobileNavLink href="/#ai" label="🤖 AI" onClick={() => setMobileMenuOpen(false)} />
-                            <MobileNavLink href="/settings" label="⚙️ 설정" onClick={() => setMobileMenuOpen(false)} />
                         </div>
                     </nav>
                 )}
