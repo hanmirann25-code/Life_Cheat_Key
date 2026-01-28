@@ -6,6 +6,14 @@ export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
     const eventMonth = searchParams.get("eventMonth");
 
+    // eventMonth 파라미터 검증
+    if (!eventMonth || eventMonth.length !== 6) {
+        return NextResponse.json(
+            { error: "eventMonth 파라미터가 올바르지 않습니다. (예: 202601)" },
+            { status: 400 }
+        );
+    }
+
     // 서버 사이드 전용 환경 변수 사용 (보안상 더 안전)
     const apiKey = process.env.TOUR_API_KEY || process.env.NEXT_PUBLIC_TOUR_API_KEY;
 
@@ -21,39 +29,61 @@ export async function GET(request: NextRequest) {
         const encodedKey = encodeURIComponent(apiKey);
         const url = `https://apis.data.go.kr/B551011/KorService2/searchFestival2?serviceKey=${encodedKey}&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=LifeCheatKey&_type=json&arrange=A&eventStartDate=${eventMonth}01`;
 
-        console.log("🔍 Tour API 요청 URL:", url);
+        console.log("🔍 Tour API 요청 URL:", url.replace(apiKey, "***"));
 
         const response = await fetch(url, {
             method: "GET",
+            headers: {
+                'Accept': 'application/json',
+            },
         });
 
         console.log("📡 API 응답 상태:", response.status);
 
+        // 응답 텍스트 먼저 확인
+        const responseText = await response.text();
+        
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error("❌ API 에러 응답:", errorText);
+            console.error("❌ API HTTP 에러 응답:", responseText.substring(0, 500));
             return NextResponse.json(
-                { error: `Tour API 요청 실패: ${response.status} - ${errorText.substring(0, 200)}` },
+                { error: `Tour API 요청 실패: ${response.status}` },
                 { status: response.status }
             );
         }
 
-        const data = await response.json();
-        
-        // Tour API 응답 구조 확인 및 에러 처리
-        if (data.response?.header?.resultCode !== "0000") {
-            const errorMsg = data.response?.header?.resultMsg || "알 수 없는 에러";
-            console.error("❌ Tour API 비즈니스 로직 에러:", errorMsg);
+        // JSON 파싱 시도
+        let data;
+        try {
+            data = JSON.parse(responseText);
+        } catch (parseError) {
+            console.error("❌ JSON 파싱 에러:", parseError);
+            console.error("응답 내용:", responseText.substring(0, 500));
             return NextResponse.json(
-                { error: `Tour API 에러: ${errorMsg}` },
+                { error: "Tour API 응답을 파싱할 수 없습니다." },
                 { status: 500 }
             );
+        }
+        
+        // Tour API 응답 구조 확인 (더 유연하게 처리)
+        if (data.response) {
+            const resultCode = data.response.header?.resultCode;
+            if (resultCode && resultCode !== "0000") {
+                const errorMsg = data.response.header?.resultMsg || "알 수 없는 에러";
+                console.error("❌ Tour API 비즈니스 로직 에러:", errorMsg, "코드:", resultCode);
+                return NextResponse.json(
+                    { error: `Tour API 에러: ${errorMsg} (코드: ${resultCode})` },
+                    { status: 500 }
+                );
+            }
         }
 
         console.log("✅ API 응답 성공");
         return NextResponse.json(data);
     } catch (error: any) {
         console.error("Tour API Error:", error);
-        return NextResponse.json({ error: error.message || "데이터를 불러올 수 없습니다" }, { status: 500 });
+        return NextResponse.json(
+            { error: error.message || "데이터를 불러올 수 없습니다" },
+            { status: 500 }
+        );
     }
 }

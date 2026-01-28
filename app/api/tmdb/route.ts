@@ -42,13 +42,34 @@ export async function GET(request: NextRequest) {
 
         console.log("📡 API 응답 상태:", response.status);
 
-        const data = await response.json();
-
+        // 응답 텍스트 먼저 확인
+        const responseText = await response.text();
+        
         if (!response.ok) {
-            console.error("❌ API 에러 응답:", data);
+            console.error("❌ API HTTP 에러 응답:", responseText.substring(0, 500));
+            try {
+                const errorData = JSON.parse(responseText);
+                return NextResponse.json(
+                    { error: errorData.status_message || `API 요청 실패: ${response.status}` },
+                    { status: response.status }
+                );
+            } catch {
+                return NextResponse.json(
+                    { error: `API 요청 실패: ${response.status}` },
+                    { status: response.status }
+                );
+            }
+        }
+
+        // JSON 파싱
+        let data;
+        try {
+            data = JSON.parse(responseText);
+        } catch (parseError) {
+            console.error("❌ JSON 파싱 에러:", parseError);
             return NextResponse.json(
-                { error: data.status_message || `API 요청 실패: ${response.status}` },
-                { status: response.status }
+                { error: "TMDB API 응답을 파싱할 수 없습니다." },
+                { status: 500 }
             );
         }
 
