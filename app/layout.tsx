@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+// Trigger Vercel build
 
 export const metadata: Metadata = {
   title: {

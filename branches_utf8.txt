@@ -1,0 +1,9 @@
+﻿* main
+  remotes/origin/main
+origin	https://github.com/hanmirann25-code/Life_Cheat_Key.git (fetch)
+origin	https://github.com/hanmirann25-code/Life_Cheat_Key.git (push)
+5386d07 feat: remove settings menu and page
+b27e1ae Merge pull request #1 from hanmirann25-code/claude/add-settings-menu-PVgsD
+0c5c4ee feat: add settings page with API health check
+57a058d fix: improve OpenAI API key error messages for Vercel deployment
+db47233 fix: resolve SSL certificate error for TMDB and Tour APIs in development environment
