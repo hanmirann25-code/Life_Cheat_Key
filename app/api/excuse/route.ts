@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-// OpenAI 클라이언트 초기화
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
+export const dynamic = 'force-dynamic';
+
 
 // 상황별 한글 이름 매핑
 const situationNames: Record<string, string> = {
@@ -58,8 +56,8 @@ export async function POST(request: NextRequest) {
         const tone = relationshipTones[relationship] || '';
 
         // 상세 사유가 있으면 포함, 없으면 자연스럽게 처리
-        const detailText = detail?.trim() 
-            ? `구체적인 사유: "${detail}"` 
+        const detailText = detail?.trim()
+            ? `구체적인 사유: "${detail}"`
             : '구체적인 사유는 언급하지 말고 일반적인 표현으로 작성하세요.';
 
         const systemPrompt = `당신은 한국어로 자연스럽고 진심 어린 사과문/핑계문을 작성하는 전문가입니다.
@@ -73,6 +71,11 @@ ${tone}
 ${detailText}
 
 위 상황에 맞는 사과문 또는 핑계문을 작성해주세요. 한 문단으로 간결하게 작성해주세요.`;
+
+        // OpenAI 클라이언트 초기화
+        const openai = new OpenAI({
+            apiKey: process.env.OPENAI_API_KEY,
+        });
 
         // OpenAI API 호출
         const completion = await openai.chat.completions.create({

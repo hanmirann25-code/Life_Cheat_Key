@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-// OpenAI 클라이언트 초기화
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
+export const dynamic = 'force-dynamic';
+
 
 // 대상별 한글 이름 매핑
 const targetNames: Record<string, string> = {
@@ -71,6 +69,11 @@ ${toneDescription}
 톤: ${tone}
 
 위 상황에 맞는 거절 멘트를 작성해주세요. 한 문장 또는 두 문장으로 간결하게 작성해주세요.`;
+
+        // OpenAI 클라이언트 초기화
+        const openai = new OpenAI({
+            apiKey: process.env.OPENAI_API_KEY,
+        });
 
         // OpenAI API 호출
         const completion = await openai.chat.completions.create({

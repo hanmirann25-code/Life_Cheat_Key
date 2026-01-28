@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
     const eventMonth = searchParams.get("eventMonth");
@@ -7,7 +9,7 @@ export async function GET(request: NextRequest) {
     const apiKey = process.env.NEXT_PUBLIC_TOUR_API_KEY;
 
     if (!apiKey) {
-        return NextResponse.json({ error: "API 키가 없습니다" }, { status: 500 });
+        return NextResponse.json({ error: "Tour API 키가 없습니다 (NEXT_PUBLIC_TOUR_API_KEY)" }, { status: 500 });
     }
 
     try {
@@ -33,8 +35,8 @@ export async function GET(request: NextRequest) {
         console.log("✅ API 응답 데이터:", JSON.stringify(data, null, 2));
 
         return NextResponse.json(data);
-    } catch (error) {
+    } catch (error: any) {
         console.error("Tour API Error:", error);
-        return NextResponse.json({ error: "데이터를 불러올 수 없습니다" }, { status: 500 });
+        return NextResponse.json({ error: error.message || "데이터를 불러올 수 없습니다" }, { status: 500 });
     }
 }

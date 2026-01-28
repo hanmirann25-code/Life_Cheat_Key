@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 import https from "https";
 
+export const dynamic = 'force-dynamic';
+
 // SSL 인증서 오류 해결 (개발 환경용)
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
@@ -13,7 +15,7 @@ export async function GET(request: NextRequest) {
     const apiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
     if (!apiKey) {
-        return NextResponse.json({ error: "API 키가 설정되지 않았습니다" }, { status: 500 });
+        return NextResponse.json({ error: "TMDB API 키가 설정되지 않았습니다 (NEXT_PUBLIC_TMDB_API_KEY)" }, { status: 500 });
     }
 
     try {
@@ -57,6 +59,8 @@ export async function GET(request: NextRequest) {
         return NextResponse.json(response.data);
     } catch (error: any) {
         console.error("TMDB API Error:", error.response?.data || error.message);
-        return NextResponse.json({ error: "데이터를 불러올 수 없습니다" }, { status: 500 });
+        const status = error.response?.status || 500;
+        const errorMessage = error.response?.data?.status_message || error.message || "데이터를 불러올 수 없습니다";
+        return NextResponse.json({ error: errorMessage }, { status });
     }
 }

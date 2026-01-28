@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-// OpenAI 클라이언트 초기화
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
+export const dynamic = 'force-dynamic';
+
 
 // 탄원서 유형별 설명 매핑
 const petitionTypeDescriptions: Record<string, string> = {
@@ -71,6 +69,11 @@ ${situationDescription}
         }
 
         userPrompt += `\n\n위 정보를 바탕으로 정식 탄원서 형식으로 작성해주세요. 서두, 본문, 결론을 포함하여 작성하세요.`;
+
+        // OpenAI 클라이언트 초기화
+        const openai = new OpenAI({
+            apiKey: process.env.OPENAI_API_KEY,
+        });
 
         // OpenAI API 호출
         const completion = await openai.chat.completions.create({
