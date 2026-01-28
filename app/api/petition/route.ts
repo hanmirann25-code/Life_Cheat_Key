@@ -38,8 +38,15 @@ export async function POST(request: NextRequest) {
 
         // API 키 확인
         if (!process.env.OPENAI_API_KEY) {
+            console.error("❌ OpenAI API 키가 설정되지 않았습니다.");
+            console.error("환경 변수 확인:", {
+                OPENAI_API_KEY: process.env.OPENAI_API_KEY ? "설정됨" : "없음"
+            });
             return NextResponse.json(
-                { error: 'OpenAI API 키가 설정되지 않았습니다.' },
+                { 
+                    error: 'OpenAI API 키가 설정되지 않았습니다. Vercel 환경 변수에 OPENAI_API_KEY를 추가해주세요.',
+                    details: 'Vercel 대시보드 → Settings → Environment Variables에서 OPENAI_API_KEY를 추가한 후 재배포해주세요.'
+                },
                 { status: 500 }
             );
         }
