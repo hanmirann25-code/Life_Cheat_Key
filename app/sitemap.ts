@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://life-cheat-key.vercel.app'
+  const baseUrl = 'https://life-cheat-key.com'
 
   return [
     {

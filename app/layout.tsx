@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import GoogleAdSense from "@/components/GoogleAdSense";
+
 // Trigger Vercel build
 
 export const metadata: Metadata = {
@@ -26,14 +28,14 @@ export const metadata: Metadata = {
   authors: [{ name: "인생 치트키" }],
   creator: "인생 치트키",
   publisher: "인생 치트키",
-  metadataBase: new URL('https://life-cheat-key.vercel.app'),
+  metadataBase: new URL('https://life-cheat-key.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://life-cheat-key.vercel.app',
+    url: 'https://life-cheat-key.com',
     title: '인생 치트키 | Life Cheat Key',
     description: '복잡한 인생, 클릭 몇 번으로 쉽게 풀자. 대출 계산기, 점심 메뉴 추천, AI 작가 등 유용한 도구 모음',
     siteName: '인생 치트키',
@@ -55,7 +57,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'google-site-verification-code', // Google Search Console에서 발급받은 코드로 교체
+    google: 'google-site-verification-code', // Google Search Console에서 발급받은 코드로 교체해주세요
+    other: {
+      'naver-site-verification': 'naver-site-verification-code', // 네이버 서치어드바이저 코드로 교체해주세요
+    },
   },
 };
 
@@ -66,6 +71,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <GoogleAdSense pId="XXXXXXXXXXXXXXXX" /> {/* AdSense Publisher ID를 여기에 입력하세요 (예: 1234567890123456) */}
+      </head>
       <body className="min-h-screen bg-white">
         {/* Structured Data */}
         <script
@@ -75,11 +83,11 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
               name: '인생 치트키',
-              url: 'https://life-cheat-key.vercel.app',
+              url: 'https://life-cheat-key.com',
               description: '복잡한 인생, 클릭 몇 번으로 쉽게 풀자. 대출 계산기, 점심 메뉴 추천, AI 작가 등 유용한 도구 모음',
               potentialAction: {
                 '@type': 'SearchAction',
-                target: 'https://life-cheat-key.vercel.app/?q={search_term_string}',
+                target: 'https://life-cheat-key.com/?q={search_term_string}',
                 'query-input': 'required name=search_term_string',
               },
             }),
@@ -92,8 +100,8 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: '인생 치트키',
-              url: 'https://life-cheat-key.vercel.app',
-              logo: 'https://life-cheat-key.vercel.app/logo.png',
+              url: 'https://life-cheat-key.com',
+              logo: 'https://life-cheat-key.com/logo.png',
               sameAs: [],
             }),
           }}
@@ -156,3 +164,4 @@ export default function RootLayout({
     </html>
   );
 }
+
