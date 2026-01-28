@@ -54,32 +54,21 @@ export default function ThemedMapPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    // 카카오 API 호출
+    // 카카오 API 호출 (서버 사이드 API 라우트 사용)
     const fetchLocations = async (category: string) => {
         setLoading(true);
         setError(null);
 
-        const apiKey = process.env.NEXT_PUBLIC_KAKAO_REST_API_KEY;
-
-        if (!apiKey) {
-            setError("⚠️ API 키가 설정되지 않았습니다. .env.local 파일을 확인해주세요.");
-            setLoading(false);
-            return;
-        }
-
         try {
             const keyword = categoryKeywords[category] || "서울 명소";
+            // 서버 사이드 API 라우트를 통해 호출 (API 키 보안)
             const response = await fetch(
-                `https://dapi.kakao.com/v2/local/search/keyword.json?query=${encodeURIComponent(keyword)}&size=15`,
-                {
-                    headers: {
-                        Authorization: `KakaoAK ${apiKey}`,
-                    },
-                }
+                `/api/kakao?query=${encodeURIComponent(keyword)}`
             );
 
             if (!response.ok) {
-                throw new Error("API 요청 실패");
+                const errorData = await response.json();
+                throw new Error(errorData.error || "API 요청 실패");
             }
 
             const data = await response.json();
@@ -211,7 +200,7 @@ export default function ThemedMapPage() {
                 <div className="bento-card bg-red-50 border-2 border-red-500">
                     <p className="font-bold text-red-600">{error}</p>
                     <p className="text-sm text-slate-600 mt-2">
-                        카카오 개발자 사이트 (https://developers.kakao.com/)에서 REST API 키를 발급받아 .env.local 파일에 추가해주세요.
+                        카카오 개발자 사이트 (https://developers.kakao.com/)에서 REST API 키를 발급받아 Vercel 환경 변수에 추가해주세요.
                     </p>
                 </div>
             )}

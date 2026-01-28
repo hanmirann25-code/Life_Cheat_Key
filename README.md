@@ -37,11 +37,29 @@ npm install
 # OpenAI 웹사이트(https://platform.openai.com/api-keys)에서 발급받으세요
 OPENAI_API_KEY=your_openai_api_key_here
 
-# TMDB API 키 (영화 정보 기능용, 선택사항)
+# TMDB API 키 (영화 정보 기능용)
+# https://www.themoviedb.org/settings/api 에서 발급받으세요
+TMDB_API_KEY=your_tmdb_api_key_here
+# 또는 클라이언트에서도 사용하려면 (권장하지 않음)
 NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key_here
+
+# 한국관광공사 Tour API 키 (행사 캘린더 기능용)
+# https://www.data.go.kr/ 에서 발급받으세요
+TOUR_API_KEY=your_tour_api_key_here
+# 또는 클라이언트에서도 사용하려면 (권장하지 않음)
+NEXT_PUBLIC_TOUR_API_KEY=your_tour_api_key_here
+
+# 카카오 REST API 키 (지도 기능용)
+# https://developers.kakao.com/ 에서 발급받으세요
+KAKAO_REST_API_KEY=your_kakao_rest_api_key_here
+# 또는 클라이언트에서도 사용하려면 (권장하지 않음)
+NEXT_PUBLIC_KAKAO_REST_API_KEY=your_kakao_rest_api_key_here
 \`\`\`
 
-**⚠️ 중요:** `.env.local` 파일은 Git에 커밋하지 마세요! (이미 .gitignore에 포함되어 있습니다)
+**⚠️ 중요:** 
+- `.env.local` 파일은 Git에 커밋하지 마세요! (이미 .gitignore에 포함되어 있습니다)
+- **보안상 서버 전용 환경 변수(`TMDB_API_KEY`, `TOUR_API_KEY`) 사용을 권장합니다.**
+- `NEXT_PUBLIC_` 접두사가 붙은 변수는 클라이언트 사이드에서도 접근 가능하므로 API 키에는 사용을 지양하세요.
 
 ### 3️⃣ 개발 서버 실행
 
@@ -220,7 +238,60 @@ Life_Cheat_Key/
 
 ---
 
+## 🚀 Vercel 배포 가이드
+
+### 1. Vercel에 프로젝트 연결
+1. [Vercel](https://vercel.com)에 로그인
+2. "Add New Project" 클릭
+3. GitHub 저장소 선택 및 Import
+
+### 2. 환경 변수 설정 (중요!)
+Vercel 대시보드에서 **Settings → Environment Variables**로 이동하여 다음 변수들을 추가하세요:
+
+\`\`\`
+OPENAI_API_KEY = your_openai_api_key_here
+TMDB_API_KEY = your_tmdb_api_key_here
+TOUR_API_KEY = your_tour_api_key_here
+KAKAO_REST_API_KEY = your_kakao_rest_api_key_here
+\`\`\`
+
+**⚠️ 주의사항:**
+- 환경 변수 이름에 `NEXT_PUBLIC_` 접두사 없이 설정하세요 (서버 전용)
+- 각 환경(Production, Preview, Development)에 모두 추가하거나 필요한 환경만 선택하세요
+- 환경 변수를 추가한 후 **재배포**해야 적용됩니다
+
+### 3. 배포 확인
+- 배포 완료 후 API 엔드포인트가 정상 작동하는지 확인:
+  - `/api/tmdb?type=movie&category=popular`
+  - `/api/tour?eventMonth=202601`
+
+### 4. 배포 후 500 에러 발생 시
+1. Vercel 대시보드의 **Functions** 탭에서 로그 확인
+2. 환경 변수가 올바르게 설정되었는지 확인
+3. API 키가 유효한지 확인 (만료되지 않았는지)
+4. 필요시 재배포 실행
+
+---
+
 ## 🐛 문제 해결 (Troubleshooting)
+
+### API 500 에러 발생 시
+\`\`\`bash
+# 1. 로컬에서 환경 변수 확인
+# .env.local 파일이 존재하고 올바른지 확인
+
+# 2. Vercel 환경 변수 확인
+# Vercel 대시보드 → Settings → Environment Variables
+
+# 3. API 키 유효성 확인
+# TMDB: https://www.themoviedb.org/settings/api
+# Tour API: https://www.data.go.kr/
+\`\`\`
+
+**일반적인 원인:**
+- 환경 변수가 설정되지 않음
+- API 키가 만료되었거나 잘못됨
+- Vercel에 환경 변수를 추가한 후 재배포하지 않음
 
 ### 서버가 시작되지 않을 때
 \`\`\`bash

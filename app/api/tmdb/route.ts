@@ -7,10 +7,14 @@ export async function GET(request: NextRequest) {
     const type = searchParams.get("type") || "movie"; // movie or tv
     const category = searchParams.get("category") || "popular"; // popular, now_playing, on_the_air
 
-    const apiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
+    // 서버 사이드 전용 환경 변수 사용 (보안상 더 안전)
+    const apiKey = process.env.TMDB_API_KEY || process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
     if (!apiKey) {
-        return NextResponse.json({ error: "TMDB API 키가 설정되지 않았습니다 (NEXT_PUBLIC_TMDB_API_KEY)" }, { status: 500 });
+        console.error("❌ TMDB API 키가 설정되지 않았습니다. 환경 변수를 확인하세요.");
+        return NextResponse.json({ 
+            error: "TMDB API 키가 설정되지 않았습니다. 서버 관리자에게 문의하세요." 
+        }, { status: 500 });
     }
 
     try {
