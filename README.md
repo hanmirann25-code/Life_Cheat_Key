@@ -1,6 +1,6 @@
 # 🎮 인생 치트키 (Life Cheat Key)
 
-> **슬로건:** "복잡한 인생, 클릭 몇 번으로 쉽게 풀자"
+> **슬로건:** "복잡한 인생, 클릭 몇 번으로 쉽게 풀자!!"
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=typescript)
