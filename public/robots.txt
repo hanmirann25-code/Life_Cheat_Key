@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://life-cheat-key.vercel.app/sitemap.xml
