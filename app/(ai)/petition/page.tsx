@@ -127,9 +127,8 @@ export default function PetitionGenerator() {
                             {[1, 2, 3, 4].map((s) => (
                                 <div
                                     key={s}
-                                    className={`w-10 h-10 rounded-full flex items-center justify-center font-black border-2 border-black transition-all duration-300 ${
-                                        step >= s ? 'bg-black text-white scale-110' : 'bg-gray-200 text-gray-400'
-                                    }`}
+                                    className={`w-10 h-10 rounded-full flex items-center justify-center font-black border-2 border-black transition-all duration-300 ${step >= s ? 'bg-black text-white scale-110' : 'bg-gray-200 text-gray-400'
+                                        }`}
                                 >
                                     {s}
                                 </div>
@@ -261,9 +260,8 @@ export default function PetitionGenerator() {
                                             generatePetition();
                                         }}
                                         disabled={isLoading}
-                                        className={`w-full py-4 bg-purple-600 text-white border-2 border-black rounded-xl text-xl font-bold flex items-center justify-center gap-2 hover:bg-purple-700 transition-all ${
-                                            isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                                        }`}
+                                        className={`w-full py-4 bg-purple-600 text-white border-2 border-black rounded-xl text-xl font-bold flex items-center justify-center gap-2 hover:bg-purple-700 transition-all ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                                            }`}
                                     >
                                         {isLoading ? (
                                             <>
@@ -335,9 +333,8 @@ export default function PetitionGenerator() {
                                     <button
                                         onClick={generatePetition}
                                         disabled={isLoading}
-                                        className={`px-6 py-3 bg-purple-600 text-white border-2 border-black font-bold text-lg hover:bg-purple-700 flex items-center justify-center gap-2 transition-all ${
-                                            isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                                        }`}
+                                        className={`px-6 py-3 bg-purple-600 text-white border-2 border-black font-bold text-lg hover:bg-purple-700 flex items-center justify-center gap-2 transition-all ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                                            }`}
                                     >
                                         {isLoading ? (
                                             <>
@@ -361,6 +358,81 @@ export default function PetitionGenerator() {
                             </div>
                         )}
                     </div>
+                </div>
+                {/* 상세 컨텐츠 섹션 */}
+                <div className="space-y-8 mt-12">
+                    {/* 1. 기획 의도 */}
+                    <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                        <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                            <span className="text-3xl">⚖️</span>
+                            <span>기획 의도: 법 앞에서도, 사람의 마음은 움직일 수 있습니다</span>
+                        </h3>
+                        <p className="text-slate-700 leading-7 text-lg mb-4">
+                            살다 보면 억울한 일을 당하거나, 한순간의 실수로 선처를 구해야 하는 순간이 찾아옵니다.
+                            하지만 법률 용어는 어렵고, 어떤 말부터 꺼내야 할지 막막하기만 합니다.
+                        </p>
+                        <p className="text-slate-700 leading-7 text-lg">
+                            <strong>인생 치트키 탄원서 작성기</strong>는 전문 법조인의 도움을 받기 힘든 분들을 위해 탄생했습니다.
+                            판사님, 검사님, 혹은 담당관의 마음을 움직일 수 있는 진심 어린 호소문을 AI 기술로 다듬어드립니다.
+                            당신의 간절함이 헛되지 않도록 도와드리겠습니다.
+                        </p>
+                    </section>
+
+                    {/* 2. 사용 방법 */}
+                    <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                        <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                            <span className="text-3xl">📝</span>
+                            <span>작성 가이드</span>
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                                <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">1</div>
+                                <h4 className="font-bold text-lg mb-2 text-slate-900">유형 선택</h4>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    음주운전 반성문, 폭행 합의 탄원서 등 작성 목적에 맞는 카테고리를 정확히 선택해주세요.
+                                </p>
+                            </div>
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                                <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                                <h4 className="font-bold text-lg mb-2 text-slate-900">상세 내용</h4>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    6하 원칙에 따라 솔직하게 적어주세요. "정말 죄송합니다" 같은 추상적인 말보다 구체적인 정황과 반성의 징표(봉사활동 등)가 효과적입니다.
+                                </p>
+                            </div>
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                                <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">3</div>
+                                <h4 className="font-bold text-lg mb-2 text-slate-900">검토 및 제출</h4>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    생성된 초안을 바탕으로 본인의 말투로 조금 더 다듬어, 자필 서명과 함께 제출하면 진정성이 배가됩니다.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* 3. 관련 지식 */}
+                    <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                        <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                            <span className="text-3xl">💡</span>
+                            <span>탄원서 작성 꿀팁</span>
+                        </h3>
+
+                        <div className="space-y-6">
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                <h4 className="text-lg font-bold text-slate-900 mb-2">📌 감정에만 호소하지 마세요</h4>
+                                <p className="text-sm text-slate-700 leading-relaxed">
+                                    "너무 억울합니다", "한 번만 봐주세요"라는 말만 반복하면 역효과가 날 수 있습니다.
+                                    <strong>객관적인 사실 관계</strong>와 <strong>재발 방지를 위한 구체적인 계획</strong>(상담 치료 예약 내역 등)을 첨부하는 것이 훨씬 설득력 있습니다.
+                                </p>
+                            </div>
+
+                            <div className="bg-yellow-50 p-5 rounded-xl border border-yellow-100">
+                                <h4 className="font-bold text-yellow-900 mb-2">✍️ 자필의 힘</h4>
+                                <p className="text-sm text-yellow-800 leading-relaxed">
+                                    AI가 써준 내용을 그대로 프린트하기보다, 중요한 부분이나 서명만큼은 <strong>자필</strong>로 작성하는 것이 읽는 사람에게 깊은 인상을 남깁니다.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>

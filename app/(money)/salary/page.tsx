@@ -228,101 +228,115 @@ export default function SalaryCalculatorPage() {
                 </div>
             </div>
 
-            {/* 설명 섹션 */}
-            <div className="space-y-6">
-                <div className="result-card bg-pastel-blue">
-                    <h3 className="text-lg font-black mb-3 flex items-center gap-2">
-                        <InformationCircleIcon className="w-5 h-5" />
-                        <span>💡 알아두세요</span>
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🎯</span>
+                        <span>기획 의도: 왜 '실수령액'이 중요할까요?</span>
                     </h3>
-                    <ul className="space-y-2 text-sm font-medium text-slate-800">
-                        <li className="flex items-start gap-2">
-                            <span className="font-black">•</span>
-                            <span>이 계산기는 <strong>2026년 기준 간이세액표</strong>를 반영한 <strong>근사값</strong>입니다.</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="font-black">•</span>
-                            <span>실제 급여는 부양가족 수, 6세 이하 자녀 수, 비과세 식대 등에 따라 달라질 수 있습니다.</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="font-black">•</span>
-                            <span>국민연금은 월 소득 상한액(590만원)이 적용되어 그 이상 소득이어도 보험료가 동일합니다.</span>
-                        </li>
-                    </ul>
-                </div>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        "연봉 1억"이라는 말, 참 설레는 단어입니다. 하지만 실제로 내 통장에 들어오는 돈이 얼마인지는 전혀 다른 문제입니다.
+                        많은 직장인들이 입사 계약서에 적힌 연봉만 믿고 소비 계획을 세우다가, 첫 월급날 당황하곤 합니다.
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 연봉 계산기</strong>는 복잡한 4대 보험과 세금 계산을 대신해주어,
+                        여러분이 <strong>'진짜 내 돈'</strong>이 얼마인지 정확히 파악하고 현명한 재무 계획을 세울 수 있도록 돕기 위해 만들어졌습니다.
+                        막연한 연봉이 아닌, 손에 잡히는 월급으로 여러분의 미래를 그려보세요.
+                    </p>
+                </section>
 
-                {/* 상세 가이드 섹션 */}
-                <div className="pt-8 border-t-2 border-slate-200 prose prose-slate max-w-none">
-                    <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
-                        💰 연봉 실수령액 완전 정복 가이드
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🛠️</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-blue rounded-full flex items-center justify-center font-black text-lg mb-3 shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">연봉 입력</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">계약된 세전 연봉을 입력하세요. 퇴직금 포함 여부는 회사마다 다르니 확인이 필요합니다.</p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-purple rounded-full flex items-center justify-center font-black text-lg mb-3 shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">자동 계산</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">최신 4대 보험 요율과 간이세액표를 적용해 즉시 월 예상 수령액을 보여줍니다.</p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-green rounded-full flex items-center justify-center font-black text-lg mb-3 shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">결과 확인</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">공제되는 세금 항목별 상세 내역과 치킨/커피 지수를 통해 가치를 체감해보세요.</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 (기존 내용 보강) */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">�</span>
+                        <span>월급 실수령액 완전 정복 가이드</span>
                     </h3>
 
                     <div className="space-y-8">
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">1. "연봉 5천인데 왜 월 350만원이죠?"</h4>
-                            <p className="text-slate-600 leading-relaxed mb-4">
-                                많은 사회초년생들이 첫 월급을 받고 당황합니다. 계약서엔 분명 연봉 5,000만원(월 416만원)이라고 적혀있는데,
-                                실제 통장에 찍히는 돈은 350만원 남짓이기 때문이죠.
-                                범인은 바로 <strong>4대 보험</strong>과 <strong>세금</strong>입니다.
-                                월급은 내 통장에 오기 전에 '원천징수'라는 정거장을 거치며 다이어트를 하게 됩니다.
+                        <div>
+                            <h4 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                                <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-base font-black">Q</span>
+                                "연봉 5천인데 왜 월 350밖에 안 들어오나요?"
+                            </h4>
+                            <p className="text-slate-600 leading-relaxed pl-4 border-l-4 border-yellow-200 bg-yellow-50/50 p-3 rounded-r-lg">
+                                흔히 말하는 '세전 연봉'에서 <strong>4대 보험(약 9%)</strong>과 <strong>소득세</strong>가 원천징수되기 때문입니다.
+                                국가는 소득이 발생하면 세금(소득세)을 걷어가고, 미래의 위험에 대비해 강제 저축(4대 보험)을 시킵니다.
+                                이 과정을 거쳐 통장에 실제로 찍히는 돈을 '세후 월급(Net Salary)'이라고 합니다.
                             </p>
-                        </section>
+                        </div>
 
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">2. 내 월급을 떼어가는 4대 보험의 정체</h4>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-                                    <strong className="block text-lg text-slate-900 mb-1">국민연금 (4.5%)</strong>
-                                    <p className="text-sm text-slate-600">
-                                        나이가 들어 은퇴했을 때를 위해 미리 저축하는 돈입니다.
-                                        회사가 절반, 내가 절반을 냅니다. (총 9%)
-                                        <br />
-                                        <span className="text-xs text-slate-500">* 월 소득 상한액이 있어 고소득자도 최대 납부액이 정해져 있습니다.</span>
-                                    </p>
+                        <div>
+                            <h4 className="text-xl font-bold text-slate-900 mb-4">💡 내 월급에서 빠져나가는 5가지</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100 hover:shadow-md transition-shadow">
+                                    <div className="font-bold text-indigo-600 mb-1">1. 국민연금 (4.5%)</div>
+                                    <p className="text-sm text-slate-600">은퇴 후를 위한 강제 저축. 회사가 절반을 내주어 총 9%가 적립됩니다.</p>
                                 </div>
-                                <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-                                    <strong className="block text-lg text-slate-900 mb-1">건강보험 (3.545%)</strong>
-                                    <p className="text-sm text-slate-600">
-                                        병원비 부담을 줄여주는 보험입니다. 역시 회사와 반반 부담합니다.
-                                        여기에 건강보험료의 12.81%가 <strong>장기요양보험료</strong>로 추가됩니다.
-                                    </p>
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100 hover:shadow-md transition-shadow">
+                                    <div className="font-bold text-emerald-600 mb-1">2. 건강보험 (3.545%)</div>
+                                    <p className="text-sm text-slate-600">병원비 부담을 줄여주는 보험. 역시 회사와 반반 부담합니다.</p>
                                 </div>
-                                <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-                                    <strong className="block text-lg text-slate-900 mb-1">고용보험 (0.9%)</strong>
-                                    <p className="text-sm text-slate-600">
-                                        실직했을 때 실업급여를 받을 수 있게 해주는 보험입니다.
-                                    </p>
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100 hover:shadow-md transition-shadow">
+                                    <div className="font-bold text-emerald-700 mb-1">3. 장기요양 (건강의 12.81%)</div>
+                                    <p className="text-sm text-slate-600">노인성 질환 지원을 위한 보험료로 건강보험료에 통합 고지됩니다.</p>
                                 </div>
-                                <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-                                    <strong className="block text-lg text-slate-900 mb-1">산재보험 (회사부담)</strong>
-                                    <p className="text-sm text-slate-600">
-                                        일하다 다쳤을 때를 대비한 보험으로, <strong>100% 회사가 냅니다.</strong>
-                                        내 월급에선 빠져나가지 않으니 안심하세요!
-                                    </p>
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100 hover:shadow-md transition-shadow">
+                                    <div className="font-bold text-blue-600 mb-1">4. 고용보험 (0.9%)</div>
+                                    <p className="text-sm text-slate-600">실직 시 실업급여를 받기 위한 보험입니다.</p>
+                                </div>
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100 hover:shadow-md transition-shadow">
+                                    <div className="font-bold text-rose-600 mb-1">5. 소득세 & 지방세</div>
+                                    <p className="text-sm text-slate-600">국가와 지자체에 내는 세금. 연봉 수준과 부양가족에 따라 천차만별입니다.</p>
                                 </div>
                             </div>
-                        </section>
+                        </div>
 
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">3. 소득세와 13월의 월급</h4>
-                            <p className="text-slate-600 leading-relaxed mb-4">
-                                4대 보험 외에도 <strong>소득세</strong>와 <strong>지방소득세(소득세의 10%)</strong>를 냅니다.
-                                매달 떼가는 세금은 '간이세액표'에 따른 대략적인 금액입니다.
-                                <br /><br />
-                                정확한 세금은 1년 치 소득과 지출을 확정한 뒤, 다음 해 2월 <strong>연말정산</strong>을 통해 계산합니다.
-                                이때 미리 낸 세금이 결정된 세금보다 많으면 돌려받고(13월의 월급), 적으면 더 내야 합니다(13월의 폭탄).
-                            </p>
-                            <div className="bg-pastel-yellow bg-opacity-30 p-4 rounded-lg border border-pastel-yellow">
-                                <h5 className="font-bold text-slate-900 mb-2">💡 세후 월급 늘리는 꿀팁</h5>
-                                <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
-                                    <li><strong>비과세 식대:</strong> 월 20만원까지는 식대에 세금을 매기지 않습니다. 회사 내규를 확인해보세요.</li>
-                                    <li><strong>부양가족 등록:</strong> 부양가족이 많을수록 공제 금액이 커져 세금을 적게 냅니다.</li>
-                                    <li><strong>청년소득세감면:</strong> 중소기업에 취업한 청년은 소득세의 90%를 감면받을 수도 있습니다(최대 200만원).</li>
-                                </ul>
-                            </div>
-                        </section>
+                        <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                            <h4 className="font-bold text-blue-900 mb-3 text-lg">🍯 실수령액을 높이는 Tip</h4>
+                            <ul className="list-none space-y-3">
+                                <li className="flex items-start gap-3">
+                                    <span className="text-blue-500 font-bold">•</span>
+                                    <span className="text-sm text-blue-900"><strong>식대 비과세:</strong> 월 20만원까지의 식대는 세금을 떼지 않습니다. 연봉 계약 시 식대 포함 여부를 확인하세요.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-blue-500 font-bold">•</span>
+                                    <span className="text-sm text-blue-900"><strong>부양가족 등록:</strong> 부양가족이 있다면 원천징수 단계에서 세금을 덜 낼 수 있습니다.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-blue-500 font-bold">•</span>
+                                    <span className="text-sm text-blue-900"><strong>중소기업 청년 소득세 감면:</strong> 중소기업에 재직 중인 청년(만 15~34세)은 소득세의 90%를 감면받을 수 있습니다. (연 최대 200만원)</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     );

@@ -404,6 +404,83 @@ export default function OTTNewReleasesPage() {
                     </p>
                 </div>
             </div>
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🍿</span>
+                        <span>기획 의도: 당신의 2시간은 소중하니까</span>
+                    </h3>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        "넷플릭스 켰다가 예고편만 30분 보고 껐어."
+                        풍요 속의 빈곤처럼, 콘텐츠 홍수 속에서 정작 볼 걸 못 찾는 '넷플릭스 증후군'을 겪고 계신가요?
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 OTT 신작</strong>은 전 세계 최대 영화 데이터베이스 TMDB를 통해
+                        검증된 평점, 핫한 트렌드를 분석하여 당신의 취향 저격 콘텐츠를 찾아드립니다.
+                    </p>
+                </section>
+
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">📺</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-purple rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">모드 선택</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                '영화' vs '드라마', '인기순' vs '최신순' 필터를 조합해 보고 싶은 장르를 좁혀보세요.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-pink rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">평점 확인</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                포스터 우측 상단의 평점(⭐)을 확인하세요. 8.0 이상은 믿고 보는 명작입니다.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-yellow rounded-full flex items-center justify-center font-black text-lg mb-3 text-slate-900 shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">정주행 시작</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                마음에 드는 작품을 골랐다면? 이제 팝콘을 준비하고 정주행을 시작할 시간입니다!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🎬</span>
+                        <span>씨네필을 위한 상식</span>
+                    </h3>
+
+                    <div className="space-y-6">
+                        <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                            <h4 className="text-lg font-bold text-blue-900 mb-2">📈 로튼 토마토 vs IMDB vs 왓챠</h4>
+                            <p className="text-sm text-blue-800 leading-relaxed">
+                                <strong>로튼 토마토:</strong> 평론가 중심. '신선도' 지수가 높으면 완성도가 높다는 뜻입니다.<br />
+                                <strong>IMDB:</strong> 전 세계 대중들의 투표. 가장 대중적인 재미 척도입니다.<br />
+                                <strong>왓챠:</strong> 한국인의 취향 반영. 한국 영화나 드라마 평점이 정확한 편입니다.
+                            </p>
+                        </div>
+
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-slate-900 mb-2">😵 빈지 워칭 (Binge-Watching)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">
+                                '몰아보기'를 뜻하는 신조어.
+                                도파민이 급격히 분비되어 즐겁지만, 수면 부족을 유발할 수 있으니
+                                <strong>"오늘 딱 2화까지만 본다"</strong>는 규칙을 세우는 것이 좋습니다. (물론 지키기 어렵죠!)
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     );
 }

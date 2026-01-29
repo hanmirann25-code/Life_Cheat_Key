@@ -162,48 +162,83 @@ export default function LunchSlotPage() {
                     </div>
                 )}
 
-                {/* Info Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="bg-neon-blue border-4 border-black shadow-brutal p-6 text-center">
-                        <div className="text-4xl mb-2">⚡</div>
-                        <h3 className="text-xl font-black mb-2">빠른 결정</h3>
-                        <p className="text-sm font-medium">
-                            고민하지 말고 슬롯에 맡기세요
+                {/* 상세 컨텐츠 섹션 */}
+                <div className="space-y-8 mt-12">
+                    {/* 1. 기획 의도 */}
+                    <section className="bg-white rounded-2xl p-6 md:p-8 border border-black shadow-brutal">
+                        <h3 className="text-2xl font-black text-black mb-4 border-b-4 border-black pb-3 flex items-center gap-2">
+                            <span className="text-3xl">🤔</span>
+                            <span>기획 의도: 인류 최대의 난제 해결</span>
+                        </h3>
+                        <p className="text-slate-800 leading-7 text-lg mb-4 font-medium">
+                            "점심 뭐 먹지?" 이 말만 수십 번 하다가 결국 편의점 김밥을 집어든 적, 있지 않으신가요?
+                            직장인의 행복한 점심시간이 결정 장애로 인한 스트레스 시간이 되어선 안 됩니다.
                         </p>
-                    </div>
-                    <div className="bg-neon-yellow border-4 border-black shadow-brutal p-6 text-center">
-                        <div className="text-4xl mb-2">🎲</div>
-                        <h3 className="text-xl font-black mb-2">랜덤 추천</h3>
-                        <p className="text-sm font-medium">
-                            매번 새로운 메뉴 발견
+                        <p className="text-slate-800 leading-7 text-lg font-medium">
+                            <strong>인생 치트키 점심 슬롯머신</strong>은 당신의 고민 시간을 0초로 줄여드립니다.
+                            한식, 중식, 일식, 양식... 당기는 장르만 골라 레버를 당기세요.
+                            오늘의 운명적인 메뉴가 당신을 기다립니다.
                         </p>
-                    </div>
-                    <div className="bg-neon-pink border-4 border-black shadow-brutal p-6 text-center text-white">
-                        <div className="text-4xl mb-2">🍜</div>
-                        <h3 className="text-xl font-black mb-2">다양한 메뉴</h3>
-                        <p className="text-sm font-medium">
-                            {allMenus.length}개 이상의 메뉴
-                        </p>
-                    </div>
-                </div>
+                    </section>
 
-                {/* Tips */}
-                <div className="bg-black text-white border-4 border-black shadow-brutal p-6">
-                    <h2 className="text-2xl font-black mb-4 text-neon-yellow">💡 사용 팁</h2>
-                    <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
-                            <span className="text-neon-yellow font-black">1.</span>
-                            <span className="font-medium">카테고리를 선택하면 해당 종류의 메뉴만 나옵니다</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="text-neon-yellow font-black">2.</span>
-                            <span className="font-medium">마음에 안 들면 다시 돌려보세요!</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="text-neon-yellow font-black">3.</span>
-                            <span className="font-medium">최근 결과에서 이전 메뉴를 다시 선택할 수 있습니다</span>
-                        </li>
-                    </ul>
+                    {/* 2. 사용 방법 */}
+                    <section className="bg-white rounded-2xl p-6 md:p-8 border border-black shadow-brutal">
+                        <h3 className="text-2xl font-black text-black mb-6 border-b-4 border-black pb-3 flex items-center gap-2">
+                            <span className="text-3xl">🎰</span>
+                            <span>사용 방법</span>
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="bg-neon-yellow border-4 border-black p-5 shadow-brutal-sm">
+                                <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center font-black text-lg mb-3 text-white">1</div>
+                                <h4 className="font-black text-lg mb-2 text-black">장르 선택</h4>
+                                <p className="text-black text-sm font-bold leading-relaxed">
+                                    '전체'로 쿨하게 돌릴지, '한식'이나 '면 요리'로 범위를 좁힐지 선택하세요.
+                                </p>
+                            </div>
+                            <div className="bg-neon-pink border-4 border-black p-5 shadow-brutal-sm text-white">
+                                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center font-black text-lg mb-3 text-black">2</div>
+                                <h4 className="font-black text-lg mb-2">슬롯 SPIN!</h4>
+                                <p className="text-white text-sm font-bold leading-relaxed">
+                                    두근두근! 버튼을 누르면 수십 가지 메뉴가 빠르게 돌아갑니다. 과연 오늘의 주인공은?
+                                </p>
+                            </div>
+                            <div className="bg-neon-blue border-4 border-black p-5 shadow-brutal-sm">
+                                <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center font-black text-lg mb-3 text-white">3</div>
+                                <h4 className="font-black text-lg mb-2 text-black">결과 승복?</h4>
+                                <p className="text-black text-sm font-bold leading-relaxed">
+                                    나온 메뉴가 마음에 들면 바로 식당으로 GO! 영 아니라면? 눈 딱 감고 한 번만 더 돌리세요.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* 3. 관련 지식 */}
+                    <section className="bg-white rounded-2xl p-6 md:p-8 border border-black shadow-brutal">
+                        <h3 className="text-2xl font-black text-black mb-6 border-b-4 border-black pb-3 flex items-center gap-2">
+                            <span className="text-3xl">😋</span>
+                            <span>메뉴 선정 꿀팁</span>
+                        </h3>
+
+                        <div className="space-y-6">
+                            <div className="bg-pastel-green border-4 border-black p-5 relative">
+                                <h4 className="text-lg font-black text-black mb-2">🌧️ 날씨별 추천</h4>
+                                <ul className="space-y-1 text-black font-bold text-sm">
+                                    <li>• 비 오는 날: 파전에 막걸리, 뜨끈한 칼국수, 짬뽕</li>
+                                    <li>• 미세먼지 많은 날: 삼겹살(기분 탓이지만), 기름진 중식</li>
+                                    <li>• 폭염: 시원한 냉면, 콩국수, 물회</li>
+                                </ul>
+                            </div>
+
+                            <div className="bg-pastel-purple border-4 border-black p-5 relative">
+                                <h4 className="font-black text-black mb-2">🕰️ 요일별 추천</h4>
+                                <ul className="space-y-1 text-black font-bold text-sm">
+                                    <li>• 월요일: 월요병 극복을 위한 매운맛 (마라탕, 떡볶이)</li>
+                                    <li>• 수요일: 주의 절반! 든든한 고기반찬 (제육, 돈가스)</li>
+                                    <li>• 금요일: 한 주 고생한 나를 위한 특식 (초밥, 수제버거)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>

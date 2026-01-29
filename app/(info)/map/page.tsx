@@ -26,10 +26,11 @@ interface KakaoPlace {
     place_url: string;
 }
 
-const categories = ["관광", "맛집", "쇼핑", "문화", "자연"];
+const categories = ["전체", "관광", "맛집", "쇼핑", "문화", "자연"];
 
 // 카테고리별 검색 키워드 매핑
 const categoryKeywords: { [key: string]: string } = {
+    전체: "서울 명소",
     관광: "서울 관광지",
     맛집: "서울 맛집",
     쇼핑: "서울 쇼핑",
@@ -47,12 +48,15 @@ const categoryEmojis: { [key: string]: string[] } = {
 };
 
 export default function ThemedMapPage() {
-    const [selectedCategory, setSelectedCategory] = useState("관광");
+    const [selectedCategory, setSelectedCategory] = useState("전체");
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
     const [locations, setLocations] = useState<Location[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    // 카운트 정보를 별도로 관리하기 위한 상태 추가
+    const [counts, setCounts] = useState<{ [key: string]: number }>({});
 
     // 카카오 API 호출 (서버 사이드 API 라우트 사용)
     const fetchLocations = async (category: string) => {
@@ -60,41 +64,71 @@ export default function ThemedMapPage() {
         setError(null);
 
         try {
-            const keyword = categoryKeywords[category] || "서울 명소";
-            // 서버 사이드 API 라우트를 통해 호출 (API 키 보안)
-            const response = await fetch(
-                `/api/kakao?query=${encodeURIComponent(keyword)}`
-            );
+            let allPlaces: { place: KakaoPlace; cat: string }[] = [];
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "API 요청 실패");
+            if (category === "전체") {
+                const subCategories = categories.filter((c) => c !== "전체");
+                const results = await Promise.all(
+                    subCategories.map(async (cat) => {
+                        try {
+                            const keyword = categoryKeywords[cat];
+                            const response = await fetch(`/api/kakao?query=${encodeURIComponent(keyword)}`);
+                            if (!response.ok) return [];
+                            const data = await response.json();
+                            return (data.documents || []).map((p: KakaoPlace) => ({ place: p, cat }));
+                        } catch (e) {
+                            console.error(`Error fetching ${cat}:`, e);
+                            return [];
+                        }
+                    })
+                );
+                allPlaces = results.flat();
+            } else {
+                const keyword = categoryKeywords[category] || "서울 명소";
+                const response = await fetch(`/api/kakao?query=${encodeURIComponent(keyword)}`);
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "API 요청 실패");
+                }
+
+                const data = await response.json();
+                allPlaces = (data.documents || []).map((p: KakaoPlace) => ({ place: p, cat: category }));
             }
 
-            const data = await response.json();
-            const places: KakaoPlace[] = data.documents;
-
             // 카카오 데이터를 우리 형식으로 변환
-            const formattedLocations: Location[] = places.map((place, index) => {
-                const categoryName = category;
-                const emojis = categoryEmojis[categoryName] || ["📍"];
+            const formattedLocations: Location[] = allPlaces.map((item, index) => {
+                const { place, cat } = item;
+                const emojis = categoryEmojis[cat] || ["📍"];
                 const emoji = emojis[index % emojis.length];
 
                 return {
                     id: place.id,
                     name: place.place_name,
-                    category: categoryName,
+                    category: cat,
                     address: place.road_address_name || place.address_name,
                     description: place.category_name.split(">").pop()?.trim() || "장소 정보",
-                    rating: Math.round((Math.random() * 1.5 + 3.5) * 10) / 10, // 3.5-5.0 랜덤 평점
+                    rating: Math.round((Math.random() * 1.5 + 3.5) * 10) / 10,
                     emoji,
-                    tags: generateTags(categoryName),
+                    tags: generateTags(cat),
                     phone: place.phone,
                     url: place.place_url,
                 };
             });
 
             setLocations(formattedLocations);
+
+            // 통계 업데이트
+            const newCounts: { [key: string]: number } = {};
+            categories.forEach(c => {
+                if (c === "전체") {
+                    newCounts[c] = formattedLocations.length;
+                } else {
+                    newCounts[c] = formattedLocations.filter(loc => loc.category === c).length;
+                }
+            });
+            setCounts(newCounts);
+
         } catch (err) {
             setError("❌ 데이터를 불러오는데 실패했습니다. API 키를 확인해주세요.");
             console.error(err);
@@ -173,7 +207,7 @@ export default function ThemedMapPage() {
                 </div>
 
                 {/* 카테고리 필터 */}
-                <div className="grid grid-cols-5 gap-2">
+                <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
                     {categories.map((category) => (
                         <button
                             key={category}
@@ -353,9 +387,9 @@ export default function ThemedMapPage() {
             </div>
 
             {/* 통계 */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
                 {categories.map((category) => {
-                    const count = locations.filter((loc) => loc.category === category).length;
+                    const count = counts[category] || 0;
                     return (
                         <div key={category} className="result-card bg-white text-center">
                             <p className="font-bold text-sm mb-1">{category}</p>

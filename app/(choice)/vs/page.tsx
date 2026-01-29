@@ -254,22 +254,82 @@ export default function VSPage() {
             </div>
 
             {/* 팁 섹션 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="result-card bg-neon-blue text-center">
-                    <div className="text-4xl mb-2">📊</div>
-                    <h3 className="text-lg font-black mb-2">시각적 비교</h3>
-                    <p className="text-sm font-medium">레이더 차트로 한눈에 비교</p>
-                </div>
-                <div className="result-card bg-neon-yellow text-center">
-                    <div className="text-4xl mb-2">⚖️</div>
-                    <h3 className="text-lg font-black mb-2">공정한 평가</h3>
-                    <p className="text-sm font-medium">5가지 기준으로 객관적 비교</p>
-                </div>
-                <div className="result-card bg-neon-pink text-white text-center">
-                    <div className="text-4xl mb-2">🏆</div>
-                    <h3 className="text-lg font-black mb-2">명확한 결과</h3>
-                    <p className="text-sm font-medium">총점으로 승자 결정</p>
-                </div>
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">⚖️</span>
+                        <span>기획 의도: 이성적인 선택을 위하여</span>
+                    </h3>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        "갤럭시냐 아이폰이냐", "짜장이냐 짬뽕이냐"... 인생은 B와 D 사이의 C(Choice)라고 하죠.
+                        감정에 치우친 선택은 후회를 남길 때가 많습니다.
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 VS 분석실</strong>은 당신의 고민을 객관적인 숫자로 변환합니다.
+                        가격, 만족도, 효율 등 다양한 기준을 시각화하여 가장 합리적인 승자를 가려냅니다.
+                    </p>
+                </section>
+
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🎛️</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-purple rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">선수 입장</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                고민 중인 두 가지 대상을 입력하세요. (예: A회사 vs B회사, 치킨 vs 피자)
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-pink rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">점수 매기기</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                가격, 맛(성능), 양(혜택) 등 5가지 항목에 대해 1점부터 10점까지 점수를 부여하세요.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-yellow rounded-full flex items-center justify-center font-black text-lg mb-3 text-slate-900 shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">분석 완료</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                오각형 레이더 차트로 장단점을 한눈에 비교하고, 총점이 더 높은 승자를 확인하세요.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">📊</span>
+                        <span>분석의 기술</span>
+                    </h3>
+
+                    <div className="space-y-6">
+                        <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                            <h4 className="text-lg font-bold text-blue-900 mb-2">💎 가중치(Weight)의 중요성</h4>
+                            <p className="text-sm text-blue-800 leading-relaxed">
+                                모든 기준이 똑같이 중요하진 않습니다.
+                                노트북을 살 때 '가격'보다 '성능'이 중요하다면, 성능 점수에 ×1.5배, 가격 점수에 ×0.8배를 해보세요.
+                                이것이 의사결정 매트릭스(Decision Matrix)의 기본입니다.
+                            </p>
+                        </div>
+
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-slate-900 mb-2">🤔 기회비용 (Opportunity Cost)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">
+                                선택하지 않음으로써 포기해야 하는 가치를 생각하세요.
+                                싼 물건을 택했을 때의 기회비용은 '품질'과 'A/S 편의성'이 될 수 있습니다.
+                                눈앞의 가격표보다 보이지 않는 비용을 고려할 때 현명한 소비가 가능합니다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     );

@@ -99,8 +99,8 @@ export default function RandomRecommenderPage() {
                                 onClick={() => setSelectedCategory(category)}
                                 disabled={isSpinning}
                                 className={`py-4 px-4 border border-slate-900 font-bold text-base transition-all duration-300 ${selectedCategory.name === category.name
-                                        ? "bg-pastel-purple text-white -translate-y-1 shadow-bento-hover"
-                                        : "bg-white hover:-translate-y-0.5 shadow-bento"
+                                    ? "bg-pastel-purple text-white -translate-y-1 shadow-bento-hover"
+                                    : "bg-white hover:-translate-y-0.5 shadow-bento"
                                     } disabled:opacity-50 disabled:cursor-not-allowed`}
                             >
                                 <div className="text-3xl mb-1">{category.emoji}</div>
@@ -212,23 +212,81 @@ export default function RandomRecommenderPage() {
                 </div>
             </div>
 
-            {/* 팁 섹션 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="result-card bg-neon-yellow text-center">
-                    <div className="text-4xl mb-2">🎲</div>
-                    <h3 className="text-lg font-black mb-2">완전 랜덤</h3>
-                    <p className="text-sm font-medium">공정한 랜덤 추천!</p>
-                </div>
-                <div className="result-card bg-neon-pink text-white text-center">
-                    <div className="text-4xl mb-2">⚡</div>
-                    <h3 className="text-lg font-black mb-2">빠른 결정</h3>
-                    <p className="text-sm font-medium">고민 끝! 바로 결정</p>
-                </div>
-                <div className="result-card bg-neon-blue text-center">
-                    <div className="text-4xl mb-2">🎁</div>
-                    <h3 className="text-lg font-black mb-2">새로운 발견</h3>
-                    <p className="text-sm font-medium">의외의 선택이 최고!</p>
-                </div>
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🧩</span>
+                        <span>기획 의도: 예측 불가능한 즐거움</span>
+                    </h3>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        "매일 같은 곳, 같은 음식, 같은 루틴... 지루하지 않나요?"
+                        우리의 뇌는 효율성을 위해 습관적인 선택을 하려고 합니다. 하지만 진정한 발견은 익숙함을 벗어날 때 찾아옵니다.
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 랜덤 추천</strong>은 당신의 안전지대(Comfort Zone)를 깨뜨려 드립니다.
+                        AI가 던져주는 무작위의 제안을 따라가 보세요. 생각지도 못한 취미, 맛집, 여행지가 당신의 인생을 바꿀지도 모릅니다.
+                    </p>
+                </section>
+
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🎲</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-yellow rounded-full flex items-center justify-center font-black text-lg mb-3 text-slate-900 shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">카테고리 픽</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                영화, 음식, 여행지 등 고민이 필요한 주제를 선택하세요.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-pink rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">운명 맡기기</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                '추천' 버튼을 누르면 수십 가지 옵션 중 하나가 운명처럼 나타납니다.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-purple rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">도전하기</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                평소라면 절대 안 골랐을 결과라도, 오늘 하루쯤은 그 선택을 따라가 보는 건 어떨까요?
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🤯</span>
+                        <span>선택의 역설 (Paradox of Choice)</span>
+                    </h3>
+
+                    <div className="space-y-6">
+                        <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                            <h4 className="text-lg font-bold text-blue-900 mb-2">선택지가 많을수록 불행하다?</h4>
+                            <p className="text-sm text-blue-800 leading-relaxed">
+                                심리학자 배리 슈워츠는 <strong>"선택지가 너무 많으면 오히려 결정을 못 하거나(결정 마비), 선택 후 만족도가 떨어진다"</strong>고 말했습니다.
+                                넷플릭스 리스트만 한 시간째 훑어보다 결국 잠든 경험, 다들 있으시죠?
+                            </p>
+                        </div>
+
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-slate-900 mb-2">💡 '세렌디피티(Serendipity)'의 힘</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">
+                                '뜻밖의 발견'을 뜻하는 세렌디피티는 혁신의 원동력입니다.
+                                페니실린도, 전자레인지도 우연한 발견에서 시작되었습니다.
+                                무작위가 주는 우연을 즐기세요. 그것이 당신의 일상에 <strong>새로운 영감</strong>을 불어넣어 줄 것입니다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     );

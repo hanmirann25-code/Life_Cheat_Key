@@ -29,8 +29,8 @@ export async function GET(request: NextRequest) {
             TOUR_API_KEY: process.env.TOUR_API_KEY ? "설정됨" : "없음",
             NEXT_PUBLIC_TOUR_API_KEY: process.env.NEXT_PUBLIC_TOUR_API_KEY ? "설정됨" : "없음"
         });
-        return NextResponse.json({ 
-            error: "Tour API 키가 설정되지 않았습니다. Vercel 환경 변수에 TOUR_API_KEY를 추가해주세요." 
+        return NextResponse.json({
+            error: "Tour API 키가 설정되지 않았습니다. Vercel 환경 변수에 TOUR_API_KEY를 추가해주세요."
         }, { status: 500 });
     }
 
@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
             const timeoutId = setTimeout(() => controller.abort(), 30000); // 30초 타임아웃
 
             // 개발 환경에서 SSL 인증서 검증 우회를 위한 agent 사용
-            const agent = process.env.NODE_ENV === 'development' 
+            const agent = process.env.NODE_ENV === 'development'
                 ? new https.Agent({ rejectUnauthorized: false })
                 : undefined;
 
@@ -70,7 +70,7 @@ export async function GET(request: NextRequest) {
             console.error("에러 이름:", fetchError.name);
             console.error("에러 메시지:", fetchError.message);
             console.error("에러 스택:", fetchError.stack);
-            
+
             // 타임아웃 에러인지 확인
             if (fetchError.name === 'AbortError' || fetchError.name === 'TimeoutError') {
                 return NextResponse.json(
@@ -78,7 +78,7 @@ export async function GET(request: NextRequest) {
                     { status: 504 }
                 );
             }
-            
+
             return NextResponse.json(
                 { error: `네트워크 에러: ${fetchError.message || "Tour API에 연결할 수 없습니다"}` },
                 { status: 500 }
@@ -89,7 +89,7 @@ export async function GET(request: NextRequest) {
 
         // 응답 텍스트 먼저 확인
         const responseText = await response.text();
-        
+
         if (!response.ok) {
             console.error("❌ API HTTP 에러 응답:", responseText.substring(0, 500));
             return NextResponse.json(
@@ -110,7 +110,7 @@ export async function GET(request: NextRequest) {
                 { status: 500 }
             );
         }
-        
+
         // Tour API 응답 구조 확인 (더 유연하게 처리)
         if (data.response) {
             const resultCode = data.response.header?.resultCode;

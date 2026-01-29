@@ -460,150 +460,129 @@ export default function LoanCalculatorPage() {
       </div>
 
       {/* 설명 섹션 */}
-      {/* SEO & 유용한 정보 섹션 (아코디언/카드 스타일) */}
-      <div className="space-y-6 pt-8 border-t-2 border-slate-200">
-        <h3 className="text-2xl font-black mb-4 flex items-center gap-2">
-          <SparklesIcon className="w-6 h-6 text-neon-yellow" />
-          <span>대출 이자 줄이는 꿀팁 & 상식</span>
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {/* Tip 1 */}
-          <div className="bento-card bg-white hover:-translate-y-1 transition-all">
-            <h4 className="font-bold text-lg mb-2">💡 중도상환수수료 확인하기</h4>
-            <p className="text-slate-600 text-sm">
-              대출을 받을 때 '중도상환수수료'가 면제되는 상품인지 꼭 확인하세요.
-              여유 자금이 생길 때마다 원금을 조금씩이라도 갚으면 총 이자를 획기적으로 줄일 수 있습니다.
-            </p>
-          </div>
-
-          {/* Tip 2 */}
-          <div className="bento-card bg-white hover:-translate-y-1 transition-all">
-            <h4 className="font-bold text-lg mb-2">📉 금리인하요구권 활용</h4>
-            <p className="text-slate-600 text-sm">
-              승진, 연봉 인상 등 신용 상태가 개선되었다면 은행에 당당하게 '금리 인하'를 요구하세요.
-              법적으로 보장된 소중한 권리입니다.
-            </p>
-          </div>
-
-          {/* Tip 3 */}
-          <div className="bento-card bg-white hover:-translate-y-1 transition-all">
-            <h4 className="font-bold text-lg mb-2">🔄 대출 갈아타기 (대환)</h4>
-            <p className="text-slate-600 text-sm">
-              더 낮은 금리의 상품이 있다면 갈아타는 것이 이득일 수 있습니다.
-              다만, 중도상환수수료와 새 대출의 부대비용을 꼼꼼히 비교해보세요.
-            </p>
-          </div>
-        </div>
-
-        {/* 재미있는 기능 설명 */}
-        <div className="result-card bg-pastel-yellow mt-6">
-          <h4 className="font-bold text-lg mb-3">🍗 치킨 환산 기능이란?</h4>
-          <p className="text-slate-700 text-sm leading-relaxed">
-            우리가 무심코 내는 대출 이자가 실제로 얼마나 큰 금액인지 체감하기 어렵습니다.
-            <strong>인생 치트키</strong>는 이를 가장 직관적인 화폐 단위인 '치킨'으로 환산해드립니다.
-            이자를 줄여서 1년 뒤, 10년 뒤에 몇 마리의 치킨을 더 먹을 수 있는지 확인해보세요!
-            <br /><br />
-            (치킨 1마리 가격은 20,000원으로 가정했습니다.)
+      {/* 상세 컨텐츠 섹션 */}
+      <div className="space-y-8 mt-12">
+        {/* 1. 기획 의도 */}
+        <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+          <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+            <span className="text-3xl">🎯</span>
+            <span>기획 의도: 대출, '이자'만 줄여도 성공입니다</span>
+          </h3>
+          <p className="text-slate-700 leading-7 text-lg mb-4">
+            집을 사거나 전세를 구할 때 대출은 필수입니다. 하지만 0.1%의 금리 차이, 혹은 상환 방식의 선택이
+            10년 뒤 <strong>수백, 수천만 원의 차이</strong>를 만든다는 사실을 알고 계신가요?
           </p>
-        </div>
+          <p className="text-slate-700 leading-7 text-lg">
+            <strong>인생 치트키 대출 계산기</strong>는 복잡한 숫자 속에 숨어있는 '진짜 비용'을 찾아드립니다.
+            특히, <strong>'원리금균등' vs '만기일시'</strong> 상환 방식을 한눈에 비교하여,
+            여러분이 <strong>'진짜 내 돈'</strong>이 얼마인지 정확히 파악하고 현명한 재무 계획을 세울 수 있도록 돕기 위해 만들어졌습니다.
+          </p>
+        </section>
 
-        {/* 상세 가이드 섹션 (AdSense 보강용) */}
-        <div className="mt-12 prose prose-slate max-w-none">
-          <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
-            📚 대출 이자 계산기 100% 활용 가이드
+        {/* 2. 사용 방법 */}
+        <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+          <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+            <span className="text-3xl">🛠️</span>
+            <span>사용 방법</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+              <div className="w-10 h-10 bg-pastel-blue rounded-full flex items-center justify-center font-black text-lg mb-3 shadow-sm">1</div>
+              <h4 className="font-bold text-lg mb-2 text-slate-900">조건 입력</h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                대출 원금, 연 이자율, 기간을 입력하세요.
+                <br /><span className="text-xs text-slate-500">* 거치 기간 등 복잡한 옵션은 제외하고 핵심만 담았습니다.</span>
+              </p>
+            </div>
+            <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+              <div className="w-10 h-10 bg-pastel-yellow rounded-full flex items-center justify-center font-black text-lg mb-3 shadow-sm">2</div>
+              <h4 className="font-bold text-lg mb-2 text-slate-900">비교 모드 활용</h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                <strong>'두 방식 동시 비교'</strong> 스위치를 켜보세요.
+                상환 방식에 따라 총 이자가 얼마나 차이나는지 직관적으로 보여줍니다.
+              </p>
+            </div>
+            <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+              <div className="w-10 h-10 bg-pastel-mint rounded-full flex items-center justify-center font-black text-lg mb-3 shadow-sm">3</div>
+              <h4 className="font-bold text-lg mb-2 text-slate-900">계획 수립</h4>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                월 상환금과 총 이자를 확인하고, 자신의 소득 흐름(DSR)에 맞는 최적의 대출 전략을 세우세요.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. 관련 지식 (기존 내용 보강) */}
+        <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+          <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+            <span className="text-3xl">📚</span>
+            <span>똑똑한 대출 생활 가이드</span>
           </h3>
 
           <div className="space-y-8">
-            <section>
-              <h4 className="text-xl font-bold text-slate-800 mb-3">1. 원리금균등 vs 만기일시, 무엇이 다를까요?</h4>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                대출을 받을 때 가장 고민되는 것이 바로 <strong>상환 방식</strong>입니다.
-                이 선택에 따라 매달 내야 하는 돈과 총 이자 금액이 크게 달라지기 때문입니다.
-              </p>
+            <div>
+              <h4 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-base font-black">VS</span>
+                상환 방식, 무엇이 유리할까?
+              </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                  <strong className="block text-lg text-blue-600 mb-2">원리금균등분할상환</strong>
-                  <p className="text-sm text-slate-600">
-                    대출 기간 동안 원금과 이자를 합친 금액이 매달 일정하도록 계산된 방식입니다.
-                    초기에는 이자 비중이 높고 원금 비중이 낮지만, 시간이 지날수록 원금 비중이 높아집니다.
-                    <br /><br />
-                    <strong>장점:</strong> 매달 나가는 돈이 똑같아서 자금 계획을 세우기 좋습니다.
-                    만기일시상환보다 총 이자가 적습니다.
-                  </p>
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-100 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded-bl-lg">추천</div>
+                  <strong className="block text-lg text-blue-700 mb-2">① 원리금균등분할상환</strong>
+                  <p className="text-sm text-slate-600 mb-2">원금과 이자를 합쳐 매달 똑같은 돈을 냅니다.</p>
+                  <ul className="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                    <li><strong>장점:</strong> 매달 나가는 고정비용이 일정해 자금 계획 세우기가 좋습니다. 만기일시상환보다 총 이자가 적습니다.</li>
+                    <li><strong>단점:</strong> 초기에는 이자 비중이 높아 원금이 더디게 줄어드는 느낌을 받을 수 있습니다.</li>
+                  </ul>
                 </div>
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                  <strong className="block text-lg text-purple-600 mb-2">만기일시상환</strong>
-                  <p className="text-sm text-slate-600">
-                    대출 기간 동안은 이자만 내고, 만기일에 원금 전체를 한꺼번에 갚는 방식입니다.
-                    당장의 월 부담금은 가장 적습니다.
-                    <br /><br />
-                    <strong>장점:</strong> 당장 낼 돈이 적어 초기 부담이 적습니다.
-                    <strong>단점:</strong> 원금이 줄어들지 않으므로 총 이자 비용이 가장 비쌉니다. 만기 때 목돈 부담이 큽니다.
-                  </p>
+                <div className="bg-slate-50 p-5 rounded-lg border border-slate-100">
+                  <strong className="block text-lg text-purple-700 mb-2">② 만기일시상환</strong>
+                  <p className="text-sm text-slate-600 mb-2">매달 이자만 내고, 만기에 원금을 한 번에 갚습니다.</p>
+                  <ul className="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                    <li><strong>장점:</strong> 당장 매달 내야 하는 돈(월 납입액)이 가장 적습니다.</li>
+                    <li><strong>단점:</strong> 원금이 줄어들지 않아 <strong>총 이자 비용이 가장 비쌉니다.</strong> 만기 시 목돈 마련 부담이 큽니다.</li>
+                  </ul>
                 </div>
               </div>
-            </section>
+            </div>
 
-            <section>
-              <h4 className="text-xl font-bold text-slate-800 mb-3">2. LTV, DTI, DSR... 대출 용어 완전 정복</h4>
-              <ul className="space-y-4">
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-12 font-black text-slate-400">LTV</span>
-                  <div>
-                    <strong className="block text-slate-900">주택담보대출비율 (Loan To Value)</strong>
-                    <p className="text-sm text-slate-600 mt-1">
-                      내 집의 가치 대비 대출 가능한 금액의 비율입니다.
-                      예를 들어 5억짜리 아파트의 LTV가 60%라면, 최대 3억까지 대출이 가능합니다.
-                    </p>
-                  </div>
+            <div>
+              <h4 className="text-xl font-bold text-slate-900 mb-4">🏦 대출 용어 1분 정리</h4>
+              <ul className="space-y-3">
+                <li className="bg-white border border-slate-200 p-4 rounded-lg flex flex-col md:flex-row gap-2 md:items-center">
+                  <span className="font-black text-rose-500 w-16">LTV</span>
+                  <span className="text-sm text-slate-600 flex-1">
+                    <strong>(Loan To Value)</strong> 집값 대비 얼마까지 빌려줄까? (예: 5억 집, LTV 60% = 3억 대출)
+                  </span>
                 </li>
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-12 font-black text-slate-400">DTI</span>
-                  <div>
-                    <strong className="block text-slate-900">총부채상환비율 (Debt To Income)</strong>
-                    <p className="text-sm text-slate-600 mt-1">
-                      내 연봉에서 대출 원리금 상환액이 차지하는 비율입니다.
-                      연봉 5천만원인 사람의 DTI가 40%라면, 연간 원리금 상환액이 2천만원을 넘을 수 없습니다.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="flex-shrink-0 w-12 font-black text-slate-400">DSR</span>
-                  <div>
-                    <strong className="block text-slate-900">총부채원리금상환비율 (Debt Service Ratio)</strong>
-                    <p className="text-sm text-slate-600 mt-1">
-                      DTI보다 더 강력한 규제입니다. 주택담보대출뿐만 아니라 신용대출, 자동차 할부 등
-                      <strong>모든 대출의 원리금</strong>을 합산하여 연봉 대비 상환 능력을 심사합니다.
-                    </p>
-                  </div>
+                <li className="bg-white border border-slate-200 p-4 rounded-lg flex flex-col md:flex-row gap-2 md:items-center">
+                  <span className="font-black text-rose-500 w-16">DSR</span>
+                  <span className="text-sm text-slate-600 flex-1">
+                    <strong>(Debt Service Ratio)</strong> 연봉 대비 갚을 능력이 되나? (모든 대출의 원리금을 합쳐 심사. 가장 까다로움)
+                  </span>
                 </li>
               </ul>
-            </section>
+            </div>
 
-            <section>
-              <h4 className="text-xl font-bold text-slate-800 mb-3">3. 현명한 대출 관리를 위한 3원칙</h4>
-              <div className="bg-pastel-mint bg-opacity-30 p-5 rounded-xl border border-pastel-mint">
-                <ol className="list-decimal list-inside space-y-3 text-slate-700">
-                  <li>
-                    <strong>주거래 은행부터 두드려라:</strong>
-                    급여 이체, 카드 사용 실적 등이 있는 주거래 은행에서 우대 금리를 받을 확률이 높습니다.
-                  </li>
-                  <li>
-                    <strong>금리인하요구권을 기억하라:</strong>
-                    승진, 연봉 인상 등 좋은 일이 생겼을 때 은행에 알리면 금리를 깎아줄 수 있습니다.
-                    (단, 은행 내부 기준 충족 시)
-                  </li>
-                  <li>
-                    <strong>중도상환 전략을 세워라:</strong>
-                    대출 초기에 여윳돈이 생긴다면 중도상환수수료를 내더라도 원금을 갚는 게 이득일 수 있습니다.
-                    대부분 3년이 지나면 중도상환수수료가 면제됩니다.
-                  </li>
-                </ol>
-              </div>
-            </section>
+            <div className="bg-orange-50 p-6 rounded-xl border border-orange-100">
+              <h4 className="font-bold text-orange-900 mb-3 text-lg">💡 금리 1% 낮추는 실전 꿀팁</h4>
+              <ul className="list-none space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-500 font-bold">1.</span>
+                  <span className="text-sm text-orange-900"><strong>금리인하요구권:</strong> 승진, 연봉 인상 등 신용 상태가 좋아졌다면 은행에 당당히 금리 인하를 요구하세요. 법적 권리입니다.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-500 font-bold">2.</span>
+                  <span className="text-sm text-orange-900"><strong>주거래 우대:</strong> 급여 통장, 관리비 납부, 카드 사용 등 주거래 은행의 우대 조건을 꼼꼼히 챙기세요.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-orange-500 font-bold">3.</span>
+                  <span className="text-sm text-orange-900"><strong>중도상환 전략:</strong> 대출 실행 3년 후에는 대부분 중도상환수수료가 사라집니다. 여윳돈이 생기면 원금부터 갚으세요.</span>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

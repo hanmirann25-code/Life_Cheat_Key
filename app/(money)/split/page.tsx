@@ -251,91 +251,131 @@ export default function SplitCalculatorPage() {
                 </div>
             </div>
 
-            {/* 팁 섹션 */}
-            <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="result-card bg-neon-yellow text-center">
-                        <div className="text-4xl mb-2">⚡</div>
-                        <h3 className="text-lg font-black mb-2">빠른 계산</h3>
-                        <p className="text-sm font-medium">
-                            복잡한 계산 없이 클릭 몇 번으로 끝
-                        </p>
-                    </div>
-                    <div className="result-card bg-neon-pink text-white text-center">
-                        <div className="text-4xl mb-2">📱</div>
-                        <h3 className="text-lg font-black mb-2">간편 공유</h3>
-                        <p className="text-sm font-medium">
-                            카톡으로 바로 공유 가능
-                        </p>
-                    </div>
-                    <div className="result-card bg-neon-blue text-center">
-                        <div className="text-4xl mb-2">💯</div>
-                        <h3 className="text-lg font-black mb-2">정확한 분배</h3>
-                        <p className="text-sm font-medium">
-                            1원 단위까지 정확하게
-                        </p>
-                    </div>
-                </div>
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🎯</span>
+                        <span>기획 의도: 돈 계산은 깔끔하게, 우정은 영원하게</span>
+                    </h3>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        "즐겁게 먹고 마셨는데, 계산할 때 눈치 보인 적 있나요?"
+                        총무 혼자 엑셀 켜고 계산기 두드리는 모습, 혹은 "나중에 줄게" 하고 까먹는 친구 때문에 속앓이한 경험, 누구나 있을 겁니다.
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 N빵 계산기</strong>는 복잡한 하트모임 정산을 3초 만에 끝내드립니다.
+                        1원 단위까지 공평하게 나누고, 카톡 공유용 텍스트까지 만들어주니
+                        이제 계산은 기계에 맡기고 여러분은 즐거운 대화만 나누세요.
+                    </p>
+                </section>
 
-                {/* 상세 가이드 섹션 */}
-                <div className="pt-8 border-t-2 border-slate-200 prose prose-slate max-w-none">
-                    <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
-                        🤝 센스 있는 더치페이(N빵) 가이드
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🛠️</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-pink rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">금액 입력</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                전체 결제 금액을 입력하세요. 영수증에 찍힌 최가 금액을 그대로 적으시면 됩니다.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-purple rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">인원 설정</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                함께한 인원수를 입력하세요.
+                                <span className="text-xs text-slate-500 block mt-1">(※ 1/N이 딱 떨어지지 않아도 걱정 마세요!)</span>
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-blue rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">공유 및 입금</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                계산된 1인당 금액을 확인하고 '복사하기' 버튼을 눌러 단톡방에 붙여넣기만 하면 정산 끝!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 (기존 내용 보강) */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🤝</span>
+                        <span>센스 있는 정산(더치페이) 가이드</span>
                     </h3>
 
                     <div className="space-y-8">
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">1. 술 안 마신 사람은? (상황별 정산법)</h4>
+                        <div>
+                            <h4 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                                <span className="bg-indigo-100 px-2 py-1 rounded text-base">🍷</span>
+                                술 안 마신 사람은? (상황별 정산법)
+                            </h4>
                             <p className="text-slate-600 leading-relaxed mb-4">
                                 무조건 '1/N'이 공평한 것은 아닙니다. 상황에 따라 유연하게 대처하는 것이 인간관계 유지의 비결입니다.
                             </p>
-                            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
                                 <table className="w-full text-sm text-left">
                                     <thead className="bg-slate-50 text-slate-900 font-bold uppercase">
                                         <tr>
                                             <th className="px-4 py-3">상황</th>
-                                            <th className="px-4 py-3">추천 방식</th>
+                                            <th className="px-4 py-3">추천 방식 (국룰)</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-slate-100">
-                                        <tr>
-                                            <td className="px-4 py-3 font-medium">비음주자 동석 시</td>
-                                            <td className="px-4 py-3 text-slate-600">술값은 마신 사람들끼리만, 안주 값은 전체 N빵</td>
+                                        <tr className="hover:bg-slate-50">
+                                            <td className="px-4 py-3 font-bold text-slate-700">비음주자 동석</td>
+                                            <td className="px-4 py-3 text-slate-600">술값은 마신 사람끼리, 안주/식사는 전체 1/N</td>
                                         </tr>
-                                        <tr>
-                                            <td className="px-4 py-3 font-medium">늦게 온 사람</td>
-                                            <td className="px-4 py-3 text-slate-600">참석 시간 비례 또는 2차부터 계산 (눈치껏 깎아주기)</td>
+                                        <tr className="hover:bg-slate-50">
+                                            <td className="px-4 py-3 font-bold text-slate-700">늦게 온 사람</td>
+                                            <td className="px-4 py-3 text-slate-600">시간 비례 혹은 2차부터 계산 (눈치껏 30~50% 할인)</td>
                                         </tr>
-                                        <tr>
-                                            <td className="px-4 py-3 font-medium">많이 먹은 사람</td>
-                                            <td className="px-4 py-3 text-slate-600">소고기, 비싼 술 등 고가 메뉴를 추가했다면 그 부분은 별도 부담</td>
+                                        <tr className="hover:bg-slate-50">
+                                            <td className="px-4 py-3 font-bold text-slate-700">고가 메뉴 주문</td>
+                                            <td className="px-4 py-3 text-slate-600">소고기/혼자 먹은 메뉴 등은 주문자가 별도 부담</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                        </section>
+                        </div>
 
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">2. "내가 낼게" vs "더치페이 하자"</h4>
-                            <p className="text-slate-600 leading-relaxed mb-4">
-                                한국 사회에서 더치페이 문화가 정착되고 있지만, 아직도 애매한 순간들이 있습니다.
-                            </p>
-                            <ul className="list-disc list-inside text-sm text-slate-700 space-y-2 bg-pastel-purple bg-opacity-20 p-5 rounded-xl">
-                                <li><strong>데이트:</strong> 요즘은 '데이트 통장'이 대세! 번갈아 내기보다는 공통 자금을 모아 쓰는 추세입니다.</li>
-                                <li><strong>선배/상사:</strong> "잘 먹었습니다" 인사하며 커피 정도를 사는 센스가 사랑받는 후배의 길.</li>
-                                <li><strong>생일파티:</strong> '생일자'는 열외하거나 적게 내고, 친구들이 N빵해서 밥을 사주는 것이 국룰.</li>
-                            </ul>
-                        </section>
+                        <div>
+                            <h4 className="text-xl font-bold text-slate-900 mb-3">💬 "내가 낼게" vs "더치페이 하자"</h4>
+                            <div className="bg-pastel-purple bg-opacity-20 p-6 rounded-xl border border-pastel-purple">
+                                <ul className="space-y-3 text-slate-700">
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-purple-600 font-black">♥</span>
+                                        <span><strong>데이트:</strong> 요즘은 '데이트 통장'이 대세! 번갈아 내기(밥-커피)보다 공통 자금을 모아 쓰는 추세입니다.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-purple-600 font-black">👔</span>
+                                        <span><strong>선배/상사:</strong> 보통 선배가 사는 문화지만, "커피는 제가 쏘겠습니다!"라고 말하는 센스가 사랑받는 후배의 지름길.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-purple-600 font-black">🎂</span>
+                                        <span><strong>생일파티:</strong> 당연히 '생일자'는 열외! 친구들이 N빵해서 밥을 사주고, 케이크까지 준비하는 것이 국룰입니다.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">3. 정산은 '스피드'가 생명</h4>
-                            <p className="text-slate-600 mb-4">
-                                "나중에 줄게"라는 말은 금물! 총무가 영수증 인증하고 계좌 올리면 <strong>24시간 이내</strong>에 입금하는 것이 매너입니다.
-                                깜빡했다면 "미안해 바로 보낼게!"라고 말하며 커피 쿠폰 하나 얹어주는 것도 좋은 방법입니다.
-                            </p>
-                        </section>
+                        <div className="bg-red-50 p-5 rounded-xl border border-red-100 flex items-start gap-4">
+                            <div className="text-3xl">⚠️</div>
+                            <div>
+                                <h4 className="font-bold text-red-900 mb-1">정산은 '스피드'가 생명</h4>
+                                <p className="text-sm text-red-800 leading-relaxed">
+                                    "나중에 줄게"는 금물! 총무가 영수증 올리고 계좌 찍으면 <strong>24시간 이내</strong> 송금하는 게 매너입니다.
+                                    깜빡했다면 "늦어서 미안해!"라며 송금할 때 몇 백원 더 얹어주거나 이모티콘이라도 보내세요.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     );

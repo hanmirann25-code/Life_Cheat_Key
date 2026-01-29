@@ -192,7 +192,7 @@ export default function RefusalGeneratorPage() {
                     </div>
                 )}
 
-                        {/* Step 2: 상황 선택 */}
+                {/* Step 2: 상황 선택 */}
                 {step === 2 && (
                     <div className="space-y-6 animate-fadeIn">
                         <div className="flex items-center justify-start mb-4">
@@ -227,9 +227,8 @@ export default function RefusalGeneratorPage() {
                                     key={t.id}
                                     onClick={() => handleToneSelect(t.id)}
                                     disabled={isLoading}
-                                    className={`flex items-center justify-between p-6 border-2 border-black rounded-xl hover:-translate-y-1 hover:shadow-brutal transition-all duration-200 group ${t.color} ${
-                                        isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                                    }`}
+                                    className={`flex items-center justify-between p-6 border-2 border-black rounded-xl hover:-translate-y-1 hover:shadow-brutal transition-all duration-200 group ${t.color} ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                                        }`}
                                 >
                                     <span className="font-bold text-xl">{t.label}</span>
                                     {isLoading ? (
@@ -287,9 +286,8 @@ export default function RefusalGeneratorPage() {
                             <button
                                 onClick={handleRegenerate}
                                 disabled={isLoading}
-                                className={`px-6 py-3 bg-neon-yellow border-2 border-black font-bold text-lg hover:-translate-y-1 hover:shadow-brutal transition-all flex items-center justify-center gap-2 ${
-                                    isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                                }`}
+                                className={`px-6 py-3 bg-neon-yellow border-2 border-black font-bold text-lg hover:-translate-y-1 hover:shadow-brutal transition-all flex items-center justify-center gap-2 ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                                    }`}
                             >
                                 {isLoading ? (
                                     <>
@@ -312,6 +310,86 @@ export default function RefusalGeneratorPage() {
                         </div>
                     </div>
                 )}
+            </div>
+
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🙅‍♂️</span>
+                        <span>기획 의도: 거절은 나를 지키는 힘입니다</span>
+                    </h3>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        "아니요"라고 말하면 미움받을까 봐 두려우신가요?
+                        하지만 모든 부탁을 다 들어주다 보면 결국 내 시간과 에너지는 고갈되고 맙니다.
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 거절 멘트 생성기</strong>는 관계를 해치지 않으면서도 단호하게 선을 긋는 법을 알려드립니다.
+                        돈 빌려달라는 친구, 불편한 회식 강요, 귀찮은 영업 전화까지...
+                        상황에 딱 맞는 품격 있는 거절의 말을 대신 써드립니다.
+                    </p>
+                </section>
+
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🕹️</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center font-black text-lg mb-3 text-neon-yellow shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">상대방 선택</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                누구에게 거절해야 하나요? 직장 상사라면 예의 바르게, 친한 친구라면 조금 더 편안하게 톤을 조절해줍니다.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">상황 고르기</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                돈 문제, 술자리, 결혼식 초대 등 가장 곤란한 대표 상황들을 모아두었습니다. 고민 없이 클릭만 하세요.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-purple rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">말투 결정</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                "정중하게", "단호하게", "유머러스하게" 등 원하는 분위기를 선택하면 소름 돋는 멘트가 1초 만에 완성됩니다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🛡️</span>
+                        <span>거절의 기술 (No-How)</span>
+                    </h3>
+
+                    <div className="space-y-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <h4 className="text-lg font-bold text-slate-900 mb-2">💡 '쿠션 언어'를 사용하세요</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">
+                                거절 앞에 긍정의 말을 깔아주는 것입니다.
+                                <br />
+                                <span className="text-slate-500 line-through">"안 돼요, 못 가요."</span> (X)
+                                <br />
+                                <span className="text-blue-600">"초대해줘서 정말 고마워요(긍정). 하지만 선약이 있어서 어렵겠네요(거절). 다음에 꼭 함께해요(마무리)."</span> (O)
+                            </p>
+                        </div>
+
+                        <div className="bg-red-50 p-5 rounded-xl border border-red-100">
+                            <h4 className="font-bold text-red-900 mb-2">🚫 여지를 주지 마세요</h4>
+                            <p className="text-sm text-red-800 leading-relaxed">
+                                "생각해볼게", "노력해볼게" 같은 애매한 말은 상대방에게 헛된 희망을 줍니다.
+                                할 수 없는 일이라면 <strong>가능한 빨리, 명확하게</strong> 의사를 밝히는 것이 서로를 위한 배려입니다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">

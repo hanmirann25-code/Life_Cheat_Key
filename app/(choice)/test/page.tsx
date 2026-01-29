@@ -271,8 +271,8 @@ export default function SensoryTestPage() {
                                 key={index}
                                 onClick={() => handleAnswer(index)}
                                 className={`w-full py-4 px-6 border-2 border-slate-900 font-bold text-lg transition-all duration-300 ${selectedAnswer === index
-                                        ? "bg-pastel-purple text-white -translate-y-1 shadow-bento-hover"
-                                        : "bg-white hover:-translate-y-0.5 shadow-bento"
+                                    ? "bg-pastel-purple text-white -translate-y-1 shadow-bento-hover"
+                                    : "bg-white hover:-translate-y-0.5 shadow-bento"
                                     }`}
                             >
                                 {option}
@@ -296,6 +296,90 @@ export default function SensoryTestPage() {
                     <p className="font-bold text-sm mb-1">현재 점수</p>
                     <p className="font-black text-3xl text-green-600">{score}점</p>
                 </div>
+            </div>
+
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">👁️</span>
+                        <span>기획 의도: 잠든 감각을 깨워라</span>
+                    </h3>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        스마트폰 화면만 보고, 이어폰으로 소리를 듣고, 자극적인 배달 음식에 익숙해진 현대인들.
+                        우리의 오감(Five Senses)은 점점 무뎌지고 있습니다.
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 감각 테스트</strong>는 간단한 퀴즈를 통해 당신의 감각 나이를 진단합니다.
+                        미세한 색의 차이, 소리의 높낮이를 구분하며 잃어버린 감각 세포를 자극해보세요.
+                    </p>
+                </section>
+
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">📝</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-green rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">문제 풀기</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                시각, 청각, 미각 등 다양한 주제의 객관식 문제가 출제됩니다. 직관적으로 답을 고르세요.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-blue rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">즉시 채점</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                정답 여부와 해설이 즉시 공개됩니다. 틀렸다면 오답 노트를 머릿속에 저장하세요.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-purple rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">결과 확인</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                모든 문제를 풀면 당신의 '감각 레벨'이 공개됩니다. 상위 10% '감각의 달인'에 도전하세요!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🧠</span>
+                        <span>뇌를 젊게 만드는 감각 훈련</span>
+                    </h3>
+
+                    <div className="space-y-6">
+                        <div className="bg-green-50 p-5 rounded-xl border border-green-100">
+                            <h4 className="text-lg font-bold text-green-900 mb-2">🌿 자연의 색 찾기 (시각)</h4>
+                            <p className="text-sm text-green-800 leading-relaxed">
+                                하루에 한 번, 길가에 핀 꽃이나 나뭇잎의 색을 자세히 관찰하세요.
+                                '초록색'이라고 뭉뚱그리지 말고 '연두색', '진녹색', '올리브색' 등으로 구분해보는 것이 시각 뇌를 깨웁니다.
+                            </p>
+                        </div>
+
+                        <div className="bg-orange-50 p-5 rounded-xl border border-orange-100">
+                            <h4 className="font-bold text-orange-900 mb-2">👃 향기 맡으며 식사하기 (후각+미각)</h4>
+                            <p className="text-sm text-orange-800 leading-relaxed">
+                                음식을 입에 넣기 전, 3초간 냄새를 맡아보세요.
+                                맛의 80%는 후각이 결정합니다. 냄새를 의식하면 뇌의 <span className="underline">해마(기억 담당)</span>가 활성화되어 치매 예방에도 좋습니다.
+                            </p>
+                        </div>
+
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-slate-900 mb-2">👂 소음 속에서 목소리 듣기 (청각)</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">
+                                카페나 지하철 등 시끄러운 곳에서 특정 악기 소리나 안내 방송에만 집중해보세요.
+                                '선택적 청취' 능력은 집중력을 높이는 최고의 훈련입니다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     );

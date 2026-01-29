@@ -67,8 +67,6 @@ export default function EventCalendarPage() {
 
             const items = data.response?.body?.items?.item || [];
 
-            // ... (기존 변환 로직 동일)
-
             const eventArray = Array.isArray(items) ? items : items ? [items] : [];
 
             const formattedEvents: Event[] = eventArray.map((item: TourEvent, index: number) => {
@@ -460,38 +458,87 @@ export default function EventCalendarPage() {
                 </div>
             </div>
 
-            {/* 상세 가이드 섹션 (AdSense 보강용) */}
-            <div className="pt-8 border-t-2 border-slate-200 prose prose-slate max-w-none">
-                <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
-                    🍂 계절별 축제 & 나들이 200% 즐기기
-                </h3>
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🗓️</span>
+                        <span>기획 의도: 당신의 일상을 축제로</span>
+                    </h3>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        "주말에 뭐 하지?" 방바닥 긁으며 보내기엔 우리의 청춘이, 우리의 주말이 너무 아깝습니다.
+                        전국 방방곡곡에선 매일 흥미로운 축제와 행사가 열리고 있습니다. 몰라서 못 갔을 뿐이죠.
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 행사 캘린더</strong>는 한국관광공사의 Tour API와 연동하여
+                        전국의 따끈따끈한 행사 정보를 실시간으로 제공합니다.
+                        특별한 데이트, 가족 나들이, 혼자만의 여행 계획을 여기서 시작하세요.
+                    </p>
+                </section>
 
-                <div className="space-y-8">
-                    <section>
-                        <h4 className="text-xl font-bold text-slate-800 mb-3">1. 대한민국 사계절 축제 로드맵</h4>
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">👆</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">시기 선택</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                캘린더 상단의 월(Month)을 변경하여 다가올 축제 일정을 미리 확인하세요.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-pink rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">취향 필터</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                공연, 마켓, 음식 등 카테고리 필터를 눌러 내 취향에 맞는 행사만 쏙쏙 골라보세요.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-yellow rounded-full flex items-center justify-center font-black text-lg mb-3 text-slate-900 shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">상세 정보</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                행사를 클릭하면 지도 위치, 문의처, 홈페이지 등 상세 정보를 볼 수 있습니다. 친구에게 공유해보세요!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🍂</span>
+                        <span>계절별 축제 & 나들이 가이드</span>
+                    </h3>
+
+                    <div className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="bg-pink-50 p-4 rounded-lg border border-pink-100">
+                            <div className="bg-pink-50 p-4 rounded-xl border border-pink-100">
                                 <strong className="block text-lg text-pink-600 mb-2">🌸 봄 (3~5월)</strong>
                                 <p className="text-sm text-slate-700">
                                     벚꽃 축제의 계절입니다. 진해 군항제, 여의도 벚꽃축제가 대표적입니다.
                                     5월에는 대학 축제와 가족 행사가 많으니 미리 일정을 체크하세요.
                                 </p>
                             </div>
-                            <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                            <div className="bg-green-50 p-4 rounded-xl border border-green-100">
                                 <strong className="block text-lg text-green-600 mb-2">🌿 여름 (6~8월)</strong>
                                 <p className="text-sm text-slate-700">
                                     더위를 날려버릴 '물' 축제가 대세! 보령 머드축제, 각종 워터밤, 락 페스티벌이 열립니다.
                                     밤에는 한강 야시장이나 궁궐 야간 개장을 추천합니다.
                                 </p>
                             </div>
-                            <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
+                            <div className="bg-orange-50 p-4 rounded-xl border border-orange-100">
                                 <strong className="block text-lg text-orange-600 mb-2">🍁 가을 (9~11월)</strong>
                                 <p className="text-sm text-slate-700">
                                     축제의 전성기입니다. 단풍놀이와 함께 지역 특산물 축제(대하, 전어, 한우 등)가 쏟아집니다.
                                     불꽃축제도 보통 가을밤에 열립니다.
                                 </p>
                             </div>
-                            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                            <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
                                 <strong className="block text-lg text-blue-600 mb-2">❄️ 겨울 (12~2월)</strong>
                                 <p className="text-sm text-slate-700">
                                     추워도 놀거리는 많습니다! 화천 산천어 축제, 태백산 눈꽃 축제 등 겨울왕국을 즐겨보세요.
@@ -499,39 +546,18 @@ export default function EventCalendarPage() {
                                 </p>
                             </div>
                         </div>
-                    </section>
 
-                    <section>
-                        <h4 className="text-xl font-bold text-slate-800 mb-3">2. 24절기와 한국의 세시풍속</h4>
-                        <p className="text-slate-600 leading-relaxed mb-4">
-                            양력 달력만 보면 놓치기 쉬운 '절기'에는 조상들의 지혜가 담겨 있습니다.
-                        </p>
-                        <ul className="list-disc list-inside text-sm text-slate-700 space-y-2 bg-slate-50 p-5 rounded-xl border border-slate-200">
-                            <li><strong>입춘(2월 초):</strong> 봄의 시작을 알리는 날. "입춘대길"을 써서 붙입니다.</li>
-                            <li><strong>경칩(3월 초):</strong> 개구리가 겨울잠에서 깨어나는 날. 이때부터 진짜 따뜻해집니다.</li>
-                            <li><strong>하지(6월 중순):</strong> 낮이 가장 긴 날. 본격적인 더위가 시작됩니다.</li>
-                            <li><strong>동지(12월 중순):</strong> 밤이 가장 긴 날. 팥죽을 먹으며 액운을 쫓습니다.</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h4 className="text-xl font-bold text-slate-800 mb-3">3. 효과적인 시간 관리 (Time Management)</h4>
-                        <p className="text-slate-600 mb-4">
-                            행사 일정만 챙기지 말고, 내 인생의 일정도 잘 관리해야겠죠?
-                        </p>
-                        <ul className="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-slate-700 font-medium text-center">
-                            <li className="p-3 bg-pastel-yellow rounded border border-slate-900 shadow-sm">
-                                📝 투두 리스트 작성하기
-                            </li>
-                            <li className="p-3 bg-pastel-mint rounded border border-slate-900 shadow-sm">
-                                ⏱️ 포모도로 기법 활용 (25분 집중 + 5분 휴식)
-                            </li>
-                            <li className="p-3 bg-pastel-purple rounded border border-slate-900 shadow-sm">
-                                🚫 멀티태스킹 줄이기
-                            </li>
-                        </ul>
-                    </section>
-                </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-slate-900 mb-2">💡 24절기와 한국의 세시풍속</h4>
+                            <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
+                                <li><strong>입춘(2월 초):</strong> 봄의 시작. 대문이나 기둥에 "입춘대길"을 써 붙입니다.</li>
+                                <li><strong>경칩(3월 초):</strong> 개구리가 깨어나는 날. 완연한 봄기운을 느껴보세요.</li>
+                                <li><strong>하지(6월 중순):</strong> 낮이 가장 긴 날. 본격적인 여름의 시작입니다.</li>
+                                <li><strong>동지(12월 중순):</strong> 밤이 가장 긴 날. 팥죽을 먹으며 액운을 쫓고 새해를 준비합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     );

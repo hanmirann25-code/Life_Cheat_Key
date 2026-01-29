@@ -283,89 +283,91 @@ export default function FoodCompatibilityPage() {
                 </div>
             </div>
 
-            {/* 팁 섹션 */}
-            <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="result-card bg-neon-pink text-white text-center">
-                        <div className="text-4xl mb-2">💕</div>
-                        <h3 className="text-lg font-black mb-2">음식 궁합</h3>
-                        <p className="text-sm font-medium">과학적 근거는 없지만 재미있어요!</p>
-                    </div>
-                    <div className="result-card bg-neon-yellow text-center">
-                        <div className="text-4xl mb-2">🍽️</div>
-                        <h3 className="text-lg font-black mb-2">새로운 조합</h3>
-                        <p className="text-sm font-medium">다양한 음식을 시도해보세요</p>
-                    </div>
-                    <div className="result-card bg-neon-blue text-center">
-                        <div className="text-4xl mb-2">😋</div>
-                        <h3 className="text-lg font-black mb-2">맛의 발견</h3>
-                        <p className="text-sm font-medium">의외의 조합이 최고일 수도!</p>
-                    </div>
-                </div>
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">👨‍🍳</span>
+                        <span>기획 의도: 미식의 즐거움, 완벽한 한 입</span>
+                    </h3>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        "치킨엔 맥주, 삼겹살엔 소주... 우린 왜 이 조합에 열광할까요?"
+                        음식도 사람처럼 '궁합'이 있습니다. 서로 부족한 맛을 채워주거나, 시너지를 내는 조합을 찾으면 식사가 배로 즐거워집니다.
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 음식 궁합</strong>은 빅데이터와 미식가들의 경험을 바탕으로,
+                        당신이 고른 음식의 최고의 파트너를 찾아드립니다. 혹은 최악의 조합을 피하게 도와드릴 수도 있죠!
+                    </p>
+                </section>
 
-                {/* 상세 가이드 섹션 */}
-                <div className="pt-8 border-t-2 border-slate-200 prose prose-slate max-w-none">
-                    <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
-                        🍽️ 결정 장애를 위한 점심 메뉴 선정 가이드
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🥄</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-pink rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">메뉴 선정</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                오늘 먹을 메인 메뉴를 첫 번째 칸에 입력하세요. '빠른 선택' 버튼을 누르면 인기 메뉴가 자동 입력됩니다.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-purple rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">파트너 매칭</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                곁들일 사이드 메뉴나 음료를 두 번째 칸에 입력해보세요. "라면에 우유가 어울릴까?" 같은 호기심도 환영합니다.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-blue rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">결과 확인</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                당신의 선택이 '환상의 짝꿍'인지 '파국'인지 점수로 알려드립니다. 의외의 꿀조합을 발견해보세요!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🥙</span>
+                        <span>실패 없는 맛의 공식</span>
                     </h3>
 
-                    <div className="space-y-8">
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">1. 오늘의 메뉴, 기분 따라 고르세요!</h4>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="bg-white p-4 rounded-lg border border-slate-200">
-                                    <strong className="block text-lg text-red-500 mb-1">스트레스 만땅일 때 😡</strong>
-                                    <p className="text-sm text-slate-600">
-                                        매운맛이 필요합니다! 캡사이신이 엔돌핀을 돌게 해줘요.
-                                        <br />추천: 마라탕, 엽기떡볶이, 불닭발, 매운 짬뽕
-                                    </p>
-                                </div>
-                                <div className="bg-white p-4 rounded-lg border border-slate-200">
-                                    <strong className="block text-lg text-blue-500 mb-1">피곤하고 기운 없을 때 😫</strong>
-                                    <p className="text-sm text-slate-600">
-                                        고단백 보양식이 정답입니다. 뜨끈한 국물로 속을 달래보세요.
-                                        <br />추천: 삼계탕, 순대국, 추어탕, 장어덮밥
-                                    </p>
-                                </div>
-                                <div className="bg-white p-4 rounded-lg border border-slate-200">
-                                    <strong className="block text-lg text-yellow-500 mb-1">비 오는 날 ☔</strong>
-                                    <p className="text-sm text-slate-600">
-                                        지글지글 기름 소리나 따뜻한 국물이 당기죠.
-                                        <br />추천: 파전+막걸리, 칼국수, 우동, 김치찌개
-                                    </p>
-                                </div>
-                                <div className="bg-white p-4 rounded-lg border border-slate-200">
-                                    <strong className="block text-lg text-green-500 mb-1">다이어트 중일 때 🥗</strong>
-                                    <p className="text-sm text-slate-600">
-                                        맛있지만 가볍게! 죄책감 없는 메뉴를 선택하세요.
-                                        <br />추천: 포케, 샐러드, 월남쌈, 샤브샤브(국물 없이)
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">2. 실패 없는 '단짠단짠' 법칙</h4>
-                            <p className="text-slate-600 leading-relaxed mb-4">
-                                맛의 밸런스를 맞추면 식사가 훨씬 즐거워집니다.
-                                메인 요리가 <strong>짠맛(나트륨)</strong> 위주라면, 사이드나 후식은 <strong>달콤한 맛</strong>으로 중화시켜주세요.
-                                반대로 <strong>기름진 음식(치킨, 피자)</strong>을 먹을 땐 <strong>탄산이나 매콤한 소스</strong>가 필수입니다.
+                    <div className="space-y-6">
+                        <div className="bg-orange-50 p-5 rounded-xl border border-orange-100">
+                            <h4 className="text-lg font-bold text-orange-900 mb-2">🔥 맵단짠 (Spicy + Sweet + Salty)</h4>
+                            <p className="text-sm text-orange-800 leading-relaxed">
+                                한국인이 가장 사랑하는 맛의 삼위일체!
+                                <strong>매운 떡볶이</strong> + <strong>달콤한 쿨피스/핫도그</strong> 조합이 대표적입니다.
+                                매운맛의 통증을 단맛이 중화시켜 끊임없이 들어가게 만듭니다.
                             </p>
-                        </section>
+                        </div>
 
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">3. 직장인 점심 메뉴 월드컵 4강</h4>
-                            <div className="bg-pastel-mint bg-opacity-30 p-5 rounded-xl border border-pastel-mint">
-                                <ol className="list-decimal list-inside space-y-2 text-slate-700 font-medium">
-                                    <li><strong>김치찌개:</strong> 한국인의 소울 푸드, 계란말이 추가는 국룰!</li>
-                                    <li><strong>제육볶음:</strong> 남자들의 영원한 1픽, 가성비 최고.</li>
-                                    <li><strong>돈가스:</strong> 바삭한 식감이 스트레스를 날려버림.</li>
-                                    <li><strong>짜장면:</strong> 빠르고 맛있게, 탕수육 없으면 섭섭함.</li>
-                                </ol>
-                            </div>
-                        </section>
+                        <div className="bg-yellow-50 p-5 rounded-xl border border-yellow-100">
+                            <h4 className="font-bold text-yellow-900 mb-2">🧀 느끼함 잡는 산미 (Greasy + Sour)</h4>
+                            <p className="text-sm text-yellow-800 leading-relaxed">
+                                기름진 음식엔 '산미'가 필수입니다.
+                                <strong>치킨엔 치킨무</strong>, <strong>피자엔 피클</strong>, <strong>튀김엔 간장+식초</strong>.
+                                입안의 기름기를 씻어내어 다음 한 입을 더 맛있게 만들어줍니다.
+                            </p>
+                        </div>
+
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <h4 className="font-bold text-slate-900 mb-2">🥛 우유와 매운맛의 과학</h4>
+                            <p className="text-sm text-slate-700 leading-relaxed">
+                                매운 음식을 먹고 물을 마시면 오히려 더 맵다는 사실, 알고 계셨나요?
+                                매운맛을 내는 캡사이신은 지용성이라 물에 녹지 않습니다.
+                                지방 성분이 있는 <strong>우유나 쿨피스, 아이스크림</strong>이 매운맛을 씻어내는 데 훨씬 효과적입니다.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     );

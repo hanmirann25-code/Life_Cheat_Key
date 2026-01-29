@@ -263,77 +263,112 @@ export default function BusinessCalculatorPage() {
                 </div>
             </div>
 
-            {/* 안내 섹션 */}
-            <div className="space-y-6">
-                <div className="result-card bg-pastel-blue">
-                    <h3 className="text-lg font-black mb-3">💡 알아두세요</h3>
-                    <ul className="space-y-2 text-sm font-medium text-slate-800">
-                        <li className="flex items-start gap-2">
-                            <span className="font-black">•</span>
-                            <span>이 시뮬레이터는 <strong>간단한 계산</strong>을 위한 것으로, 실제 창업 시에는 더 많은 요소를 고려해야 합니다.</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="font-black">•</span>
-                            <span>월 비용에는 임대료, 인건비, 재료비, 공과금 등이 포함됩니다.</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="font-black">•</span>
-                            <span>업종별 기본값은 평균적인 수치이며, 지역과 상황에 따라 다를 수 있습니다.</span>
-                        </li>
-                    </ul>
-                </div>
+            {/* 상세 컨텐츠 섹션 */}
+            <div className="space-y-8 mt-12">
+                {/* 1. 기획 의도 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-4 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🎯</span>
+                        <span>기획 의도: '대박' 환상 대신 '현실'을 드립니다</span>
+                    </h3>
+                    <p className="text-slate-700 leading-7 text-lg mb-4">
+                        "회사 때려치우고 카페나 할까?" 누구나 한 번쯤 해보는 생각입니다.
+                        하지만 화려한 매출 뒤에는 임대료, 인건비, 재료비, 세금이라는 거대한 <strong>고정비의 벽</strong>이 숨어있습니다.
+                    </p>
+                    <p className="text-slate-700 leading-7 text-lg">
+                        <strong>인생 치트키 창업 시뮬레이터</strong>는 막연한 기대감을 냉정한 숫자로 바꿔드립니다.
+                        월 1,000만 원 매출일 때 내 손에 쥐는 돈은 얼마인지, 투자금을 회수하려면 몇 년을 버텨야 하는지
+                        미리 계산해보고 <strong>실패 없는 창업</strong>을 준비하세요.
+                    </p>
+                </section>
 
-                {/* 상세 가이드 섹션 */}
-                <div className="pt-8 border-t-2 border-slate-200 prose prose-slate max-w-none">
-                    <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
-                        🏪 사장님이 꼭 알아야 할 손익 & 세무 상식
+                {/* 2. 사용 방법 */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">🛠️</span>
+                        <span>사용 방법</span>
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-purple rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">1</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">업종 선택</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                편의점, 카페, 치킨집 등 관심 있는 업종을 선택하세요.
+                                <span className="text-xs text-slate-500 block mt-1">* 업종별 평균 비용이 자동 입력됩니다.</span>
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-pink rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">2</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">현실값 입력</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                예상 월 매출과 고정비(월세+관리비+인건비+재료비)를 솔직하게 입력하세요. 보수적으로 잡을수록 좋습니다.
+                            </p>
+                        </div>
+                        <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div className="w-10 h-10 bg-pastel-yellow rounded-full flex items-center justify-center font-black text-lg mb-3 text-white shadow-sm">3</div>
+                            <h4 className="font-bold text-lg mb-2 text-slate-900">생존 분석</h4>
+                            <p className="text-slate-600 text-sm leading-relaxed">
+                                순이익, ROI, 손익분기점(BEP)을 확인하고, 몇 개월을 버텨야 흑자가 되는지 시뮬레이션 해보세요.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. 관련 지식 (기존 내용 보강) */}
+                <section className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <h3 className="text-2xl font-black text-slate-800 mb-6 border-b-2 border-slate-100 pb-3 flex items-center gap-2">
+                        <span className="text-3xl">📚</span>
+                        <span>사장님 필수 생존 지식</span>
                     </h3>
 
                     <div className="space-y-8">
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">1. "마진이 남는다"의 진짜 의미 (이익률 계산)</h4>
-                            <p className="text-slate-600 leading-relaxed mb-4">
-                                장사는 '매출'이 아니라 '순수익'이 중요합니다.
+                        <div>
+                            <h4 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                                <span className="text-green-600 text-2xl">•</span>
+                                "마진이 남는다"의 함정 (순이익률)
+                            </h4>
+                            <p className="text-slate-600 leading-relaxed pl-4 border-l-4 border-green-200">
+                                장사는 '매출'이 아니라 <strong>'순이익'</strong>이 남아야 합니다.
                                 천 원에 팔아서 백 원이 남으면 마진율(순이익률)은 10%입니다.
-                                <br /><br />
-                                <strong>순수익 = 매출액 - (재료비 + 인건비 + 임대료 + 공과금 + 세금 + 기타비용)</strong>
                                 <br />
-                                많은 초보 사장님들이 '세금'과 '감가상각비'를 계산에서 빠뜨려 실제로는 적자인데 흑자인 줄 착각하곤 합니다.
+                                <strong>[순이익 = 매출액 - (재료비 + 인건비 + 임대료 + 세금 + 카드수수료)]</strong>
+                                <br />
+                                초보 사장님들이 가장 많이 놓치는 게 <strong>부가세, 종합소득세</strong>와 <strong>기기 감가상각비</strong>입니다.
                             </p>
-                        </section>
+                        </div>
 
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">2. 부가세(VAT), 내 돈이 아닙니다</h4>
-                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                                <p className="text-slate-700 mb-3">
-                                    손님에게 11,000원을 받았다면, 그중 1,000원은 사장님 돈이 아니라 <strong>국가에 낼 세금(부가세)</strong>을 잠시 보관하는 것입니다.
-                                    통장에 들어왔다고 다 쓰면 나중에 세금 폭탄을 맞게 됩니다.
-                                </p>
-                                <ul className="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                    <li><strong>일반과세자:</strong> 매출세액(10%)에서 매입세액(재료 살 때 낸 세금)을 뺀 금액 납부</li>
-                                    <li><strong>간이과세자:</strong> 매출액 × 업종별 부가가치율 × 10% (비교적 세금 부담이 적음)</li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section>
-                            <h4 className="text-xl font-bold text-slate-800 mb-3">3. 손익분기점(BEP)은 생존의 기준선</h4>
-                            <p className="text-slate-600 leading-relaxed mb-4">
-                                투자한 원금을 모두 회수하는 시점을 말합니다.
-                                예를 들어 1억을 투자했는데 월 순수익이 200만원이라면,
-                                <strong>50개월(4년 2개월)</strong>이 지나야 비로소 진짜 돈을 버는 것입니다.
-                                창업 전 반드시 계산해봐야 할 가장 중요한 지표입니다.
-                            </p>
-                            <div className="bg-pastel-mint bg-opacity-30 p-4 rounded-lg border border-pastel-mint">
-                                <h5 className="font-bold text-slate-900 mb-2">💡 권리금 보호 노하우</h5>
-                                <p className="text-sm text-slate-700">
-                                    상가임대차보호법에 따라 임대차 기간이 끝나기 6개월 전부터 임대인에게 신규 임차인을 주선하면 권리금을 회수할 기회를 보장받을 수 있습니다.
-                                    단, 3기 이상의 차임(월세)을 연체하면 보호받지 못하니 주의하세요!
+                        <div>
+                            <h4 className="text-xl font-bold text-slate-900 mb-4">☠️ '손익분기점'을 넘겨라</h4>
+                            <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                <strong className="block text-lg text-slate-900 mb-2">BEP (Break-even Point)란?</strong>
+                                <p className="text-slate-600 text-sm mb-4">
+                                    투자한 원금을 모두 회수하는 시점을 말합니다.
+                                    예를 들어 1억을 투자했는데 월 순이익이 200만 원이라면,
+                                    이론적으로 <strong>50개월(4년 2개월)</strong>이 지나야 비로소 진짜 돈을 버는 셈입니다.
+                                    임대 계약 기간(보통 2년) 안에 원금을 회수할 수 있는지 냉정하게 따져봐야 합니다.
                                 </p>
                             </div>
-                        </section>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="bg-pink-50 p-5 rounded-xl border border-pink-100">
+                                <h4 className="font-bold text-pink-900 mb-2">💸 부가세 (VAT) 주의보</h4>
+                                <p className="text-sm text-pink-800 leading-relaxed">
+                                    손님에게 받은 11,000원에서 1,000원은 내 돈이 아니라 국세청 돈입니다.
+                                    통장에 들어왔다고 다 쓰면 나중에 세금 폭탄 맞습니다.
+                                    <strong>부가세 통장</strong>을 따로 만들어 매일 매출의 10%를 이체해두세요.
+                                </p>
+                            </div>
+                            <div className="bg-purple-50 p-5 rounded-xl border border-purple-100">
+                                <h4 className="font-bold text-purple-900 mb-2">🛡️ 권리금 보호</h4>
+                                <p className="text-sm text-purple-800 leading-relaxed">
+                                    나중에 가게를 뺄 때 권리금을 받고 싶다면, 임대차 기간 종료 6개월 전부터 신규 세입자를 주선해야 합니다.
+                                    단, 월세가 3번 이상 밀리면 권리금 보호를 못 받으니 주의하세요!
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div >
     );
