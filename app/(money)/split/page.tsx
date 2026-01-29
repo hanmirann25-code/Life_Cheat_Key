@@ -84,8 +84,8 @@ export default function SplitCalculatorPage() {
                                     key={amount}
                                     onClick={() => setTotalAmount(amount)}
                                     className={`py-2 px-2 border border-slate-900 font-bold text-xs transition-all duration-300 ${totalAmount === amount
-                                            ? "bg-pastel-yellow -translate-y-1 shadow-bento-hover"
-                                            : "bg-white hover:-translate-y-0.5 shadow-bento"
+                                        ? "bg-pastel-yellow -translate-y-1 shadow-bento-hover"
+                                        : "bg-white hover:-translate-y-0.5 shadow-bento"
                                         }`}
                                 >
                                     {(amount / 10000).toFixed(0)}만원
@@ -116,8 +116,8 @@ export default function SplitCalculatorPage() {
                                     key={people}
                                     onClick={() => setNumberOfPeople(people)}
                                     className={`py-2 px-2 border border-slate-900 font-bold text-sm transition-all duration-300 ${numberOfPeople === people
-                                            ? "bg-pastel-blue -translate-y-1 shadow-bento-hover"
-                                            : "bg-white hover:-translate-y-0.5 shadow-bento"
+                                        ? "bg-pastel-blue -translate-y-1 shadow-bento-hover"
+                                        : "bg-white hover:-translate-y-0.5 shadow-bento"
                                         }`}
                                 >
                                     {people}명
@@ -193,8 +193,8 @@ export default function SplitCalculatorPage() {
                                 <button
                                     onClick={handleCopyToClipboard}
                                     className={`w-full py-3 px-4 border border-slate-900 font-bold text-base transition-all duration-300 flex items-center justify-center gap-2 ${copied
-                                            ? "bg-white"
-                                            : "bg-pastel-yellow hover:-translate-y-1 shadow-bento hover:shadow-bento-hover"
+                                        ? "bg-white"
+                                        : "bg-pastel-yellow hover:-translate-y-1 shadow-bento hover:shadow-bento-hover"
                                         }`}
                                 >
                                     {copied ? (
@@ -252,27 +252,89 @@ export default function SplitCalculatorPage() {
             </div>
 
             {/* 팁 섹션 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="result-card bg-neon-yellow text-center">
-                    <div className="text-4xl mb-2">⚡</div>
-                    <h3 className="text-lg font-black mb-2">빠른 계산</h3>
-                    <p className="text-sm font-medium">
-                        복잡한 계산 없이 클릭 몇 번으로 끝
-                    </p>
+            <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="result-card bg-neon-yellow text-center">
+                        <div className="text-4xl mb-2">⚡</div>
+                        <h3 className="text-lg font-black mb-2">빠른 계산</h3>
+                        <p className="text-sm font-medium">
+                            복잡한 계산 없이 클릭 몇 번으로 끝
+                        </p>
+                    </div>
+                    <div className="result-card bg-neon-pink text-white text-center">
+                        <div className="text-4xl mb-2">📱</div>
+                        <h3 className="text-lg font-black mb-2">간편 공유</h3>
+                        <p className="text-sm font-medium">
+                            카톡으로 바로 공유 가능
+                        </p>
+                    </div>
+                    <div className="result-card bg-neon-blue text-center">
+                        <div className="text-4xl mb-2">💯</div>
+                        <h3 className="text-lg font-black mb-2">정확한 분배</h3>
+                        <p className="text-sm font-medium">
+                            1원 단위까지 정확하게
+                        </p>
+                    </div>
                 </div>
-                <div className="result-card bg-neon-pink text-white text-center">
-                    <div className="text-4xl mb-2">📱</div>
-                    <h3 className="text-lg font-black mb-2">간편 공유</h3>
-                    <p className="text-sm font-medium">
-                        카톡으로 바로 공유 가능
-                    </p>
-                </div>
-                <div className="result-card bg-neon-blue text-center">
-                    <div className="text-4xl mb-2">💯</div>
-                    <h3 className="text-lg font-black mb-2">정확한 분배</h3>
-                    <p className="text-sm font-medium">
-                        1원 단위까지 정확하게
-                    </p>
+
+                {/* 상세 가이드 섹션 */}
+                <div className="pt-8 border-t-2 border-slate-200 prose prose-slate max-w-none">
+                    <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
+                        🤝 센스 있는 더치페이(N빵) 가이드
+                    </h3>
+
+                    <div className="space-y-8">
+                        <section>
+                            <h4 className="text-xl font-bold text-slate-800 mb-3">1. 술 안 마신 사람은? (상황별 정산법)</h4>
+                            <p className="text-slate-600 leading-relaxed mb-4">
+                                무조건 '1/N'이 공평한 것은 아닙니다. 상황에 따라 유연하게 대처하는 것이 인간관계 유지의 비결입니다.
+                            </p>
+                            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                                <table className="w-full text-sm text-left">
+                                    <thead className="bg-slate-50 text-slate-900 font-bold uppercase">
+                                        <tr>
+                                            <th className="px-4 py-3">상황</th>
+                                            <th className="px-4 py-3">추천 방식</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100">
+                                        <tr>
+                                            <td className="px-4 py-3 font-medium">비음주자 동석 시</td>
+                                            <td className="px-4 py-3 text-slate-600">술값은 마신 사람들끼리만, 안주 값은 전체 N빵</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="px-4 py-3 font-medium">늦게 온 사람</td>
+                                            <td className="px-4 py-3 text-slate-600">참석 시간 비례 또는 2차부터 계산 (눈치껏 깎아주기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="px-4 py-3 font-medium">많이 먹은 사람</td>
+                                            <td className="px-4 py-3 text-slate-600">소고기, 비싼 술 등 고가 메뉴를 추가했다면 그 부분은 별도 부담</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h4 className="text-xl font-bold text-slate-800 mb-3">2. "내가 낼게" vs "더치페이 하자"</h4>
+                            <p className="text-slate-600 leading-relaxed mb-4">
+                                한국 사회에서 더치페이 문화가 정착되고 있지만, 아직도 애매한 순간들이 있습니다.
+                            </p>
+                            <ul className="list-disc list-inside text-sm text-slate-700 space-y-2 bg-pastel-purple bg-opacity-20 p-5 rounded-xl">
+                                <li><strong>데이트:</strong> 요즘은 '데이트 통장'이 대세! 번갈아 내기보다는 공통 자금을 모아 쓰는 추세입니다.</li>
+                                <li><strong>선배/상사:</strong> "잘 먹었습니다" 인사하며 커피 정도를 사는 센스가 사랑받는 후배의 길.</li>
+                                <li><strong>생일파티:</strong> '생일자'는 열외하거나 적게 내고, 친구들이 N빵해서 밥을 사주는 것이 국룰.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h4 className="text-xl font-bold text-slate-800 mb-3">3. 정산은 '스피드'가 생명</h4>
+                            <p className="text-slate-600 mb-4">
+                                "나중에 줄게"라는 말은 금물! 총무가 영수증 인증하고 계좌 올리면 <strong>24시간 이내</strong>에 입금하는 것이 매너입니다.
+                                깜빡했다면 "미안해 바로 보낼게!"라고 말하며 커피 쿠폰 하나 얹어주는 것도 좋은 방법입니다.
+                            </p>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>

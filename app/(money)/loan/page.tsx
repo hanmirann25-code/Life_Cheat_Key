@@ -507,6 +507,103 @@ export default function LoanCalculatorPage() {
             (치킨 1마리 가격은 20,000원으로 가정했습니다.)
           </p>
         </div>
+
+        {/* 상세 가이드 섹션 (AdSense 보강용) */}
+        <div className="mt-12 prose prose-slate max-w-none">
+          <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
+            📚 대출 이자 계산기 100% 활용 가이드
+          </h3>
+
+          <div className="space-y-8">
+            <section>
+              <h4 className="text-xl font-bold text-slate-800 mb-3">1. 원리금균등 vs 만기일시, 무엇이 다를까요?</h4>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                대출을 받을 때 가장 고민되는 것이 바로 <strong>상환 방식</strong>입니다.
+                이 선택에 따라 매달 내야 하는 돈과 총 이자 금액이 크게 달라지기 때문입니다.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                  <strong className="block text-lg text-blue-600 mb-2">원리금균등분할상환</strong>
+                  <p className="text-sm text-slate-600">
+                    대출 기간 동안 원금과 이자를 합친 금액이 매달 일정하도록 계산된 방식입니다.
+                    초기에는 이자 비중이 높고 원금 비중이 낮지만, 시간이 지날수록 원금 비중이 높아집니다.
+                    <br /><br />
+                    <strong>장점:</strong> 매달 나가는 돈이 똑같아서 자금 계획을 세우기 좋습니다.
+                    만기일시상환보다 총 이자가 적습니다.
+                  </p>
+                </div>
+                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                  <strong className="block text-lg text-purple-600 mb-2">만기일시상환</strong>
+                  <p className="text-sm text-slate-600">
+                    대출 기간 동안은 이자만 내고, 만기일에 원금 전체를 한꺼번에 갚는 방식입니다.
+                    당장의 월 부담금은 가장 적습니다.
+                    <br /><br />
+                    <strong>장점:</strong> 당장 낼 돈이 적어 초기 부담이 적습니다.
+                    <strong>단점:</strong> 원금이 줄어들지 않으므로 총 이자 비용이 가장 비쌉니다. 만기 때 목돈 부담이 큽니다.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h4 className="text-xl font-bold text-slate-800 mb-3">2. LTV, DTI, DSR... 대출 용어 완전 정복</h4>
+              <ul className="space-y-4">
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-12 font-black text-slate-400">LTV</span>
+                  <div>
+                    <strong className="block text-slate-900">주택담보대출비율 (Loan To Value)</strong>
+                    <p className="text-sm text-slate-600 mt-1">
+                      내 집의 가치 대비 대출 가능한 금액의 비율입니다.
+                      예를 들어 5억짜리 아파트의 LTV가 60%라면, 최대 3억까지 대출이 가능합니다.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-12 font-black text-slate-400">DTI</span>
+                  <div>
+                    <strong className="block text-slate-900">총부채상환비율 (Debt To Income)</strong>
+                    <p className="text-sm text-slate-600 mt-1">
+                      내 연봉에서 대출 원리금 상환액이 차지하는 비율입니다.
+                      연봉 5천만원인 사람의 DTI가 40%라면, 연간 원리금 상환액이 2천만원을 넘을 수 없습니다.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-12 font-black text-slate-400">DSR</span>
+                  <div>
+                    <strong className="block text-slate-900">총부채원리금상환비율 (Debt Service Ratio)</strong>
+                    <p className="text-sm text-slate-600 mt-1">
+                      DTI보다 더 강력한 규제입니다. 주택담보대출뿐만 아니라 신용대출, 자동차 할부 등
+                      <strong>모든 대출의 원리금</strong>을 합산하여 연봉 대비 상환 능력을 심사합니다.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h4 className="text-xl font-bold text-slate-800 mb-3">3. 현명한 대출 관리를 위한 3원칙</h4>
+              <div className="bg-pastel-mint bg-opacity-30 p-5 rounded-xl border border-pastel-mint">
+                <ol className="list-decimal list-inside space-y-3 text-slate-700">
+                  <li>
+                    <strong>주거래 은행부터 두드려라:</strong>
+                    급여 이체, 카드 사용 실적 등이 있는 주거래 은행에서 우대 금리를 받을 확률이 높습니다.
+                  </li>
+                  <li>
+                    <strong>금리인하요구권을 기억하라:</strong>
+                    승진, 연봉 인상 등 좋은 일이 생겼을 때 은행에 알리면 금리를 깎아줄 수 있습니다.
+                    (단, 은행 내부 기준 충족 시)
+                  </li>
+                  <li>
+                    <strong>중도상환 전략을 세워라:</strong>
+                    대출 초기에 여윳돈이 생긴다면 중도상환수수료를 내더라도 원금을 갚는 게 이득일 수 있습니다.
+                    대부분 3년이 지나면 중도상환수수료가 면제됩니다.
+                  </li>
+                </ol>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   );

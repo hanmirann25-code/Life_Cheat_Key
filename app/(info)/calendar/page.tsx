@@ -459,6 +459,80 @@ export default function EventCalendarPage() {
                     })}
                 </div>
             </div>
+
+            {/* 상세 가이드 섹션 (AdSense 보강용) */}
+            <div className="pt-8 border-t-2 border-slate-200 prose prose-slate max-w-none">
+                <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
+                    🍂 계절별 축제 & 나들이 200% 즐기기
+                </h3>
+
+                <div className="space-y-8">
+                    <section>
+                        <h4 className="text-xl font-bold text-slate-800 mb-3">1. 대한민국 사계절 축제 로드맵</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="bg-pink-50 p-4 rounded-lg border border-pink-100">
+                                <strong className="block text-lg text-pink-600 mb-2">🌸 봄 (3~5월)</strong>
+                                <p className="text-sm text-slate-700">
+                                    벚꽃 축제의 계절입니다. 진해 군항제, 여의도 벚꽃축제가 대표적입니다.
+                                    5월에는 대학 축제와 가족 행사가 많으니 미리 일정을 체크하세요.
+                                </p>
+                            </div>
+                            <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                                <strong className="block text-lg text-green-600 mb-2">🌿 여름 (6~8월)</strong>
+                                <p className="text-sm text-slate-700">
+                                    더위를 날려버릴 '물' 축제가 대세! 보령 머드축제, 각종 워터밤, 락 페스티벌이 열립니다.
+                                    밤에는 한강 야시장이나 궁궐 야간 개장을 추천합니다.
+                                </p>
+                            </div>
+                            <div className="bg-orange-50 p-4 rounded-lg border border-orange-100">
+                                <strong className="block text-lg text-orange-600 mb-2">🍁 가을 (9~11월)</strong>
+                                <p className="text-sm text-slate-700">
+                                    축제의 전성기입니다. 단풍놀이와 함께 지역 특산물 축제(대하, 전어, 한우 등)가 쏟아집니다.
+                                    불꽃축제도 보통 가을밤에 열립니다.
+                                </p>
+                            </div>
+                            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                                <strong className="block text-lg text-blue-600 mb-2">❄️ 겨울 (12~2월)</strong>
+                                <p className="text-sm text-slate-700">
+                                    추워도 놀거리는 많습니다! 화천 산천어 축제, 태백산 눈꽃 축제 등 겨울왕국을 즐겨보세요.
+                                    크리스마스와 연말 일루미네이션 명소도 놓치지 마세요.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4 className="text-xl font-bold text-slate-800 mb-3">2. 24절기와 한국의 세시풍속</h4>
+                        <p className="text-slate-600 leading-relaxed mb-4">
+                            양력 달력만 보면 놓치기 쉬운 '절기'에는 조상들의 지혜가 담겨 있습니다.
+                        </p>
+                        <ul className="list-disc list-inside text-sm text-slate-700 space-y-2 bg-slate-50 p-5 rounded-xl border border-slate-200">
+                            <li><strong>입춘(2월 초):</strong> 봄의 시작을 알리는 날. "입춘대길"을 써서 붙입니다.</li>
+                            <li><strong>경칩(3월 초):</strong> 개구리가 겨울잠에서 깨어나는 날. 이때부터 진짜 따뜻해집니다.</li>
+                            <li><strong>하지(6월 중순):</strong> 낮이 가장 긴 날. 본격적인 더위가 시작됩니다.</li>
+                            <li><strong>동지(12월 중순):</strong> 밤이 가장 긴 날. 팥죽을 먹으며 액운을 쫓습니다.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4 className="text-xl font-bold text-slate-800 mb-3">3. 효과적인 시간 관리 (Time Management)</h4>
+                        <p className="text-slate-600 mb-4">
+                            행사 일정만 챙기지 말고, 내 인생의 일정도 잘 관리해야겠죠?
+                        </p>
+                        <ul className="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-slate-700 font-medium text-center">
+                            <li className="p-3 bg-pastel-yellow rounded border border-slate-900 shadow-sm">
+                                📝 투두 리스트 작성하기
+                            </li>
+                            <li className="p-3 bg-pastel-mint rounded border border-slate-900 shadow-sm">
+                                ⏱️ 포모도로 기법 활용 (25분 집중 + 5분 휴식)
+                            </li>
+                            <li className="p-3 bg-pastel-purple rounded border border-slate-900 shadow-sm">
+                                🚫 멀티태스킹 줄이기
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
         </div>
     );
 }

@@ -138,8 +138,8 @@ export default function FoodCompatibilityPage() {
                                     key={food}
                                     onClick={() => setFood1(food)}
                                     className={`py-2 px-2 border border-slate-900 font-bold text-xs transition-all duration-300 ${food1 === food
-                                            ? "bg-pastel-pink -translate-y-1 shadow-bento-hover"
-                                            : "bg-white hover:-translate-y-0.5 shadow-bento"
+                                        ? "bg-pastel-pink -translate-y-1 shadow-bento-hover"
+                                        : "bg-white hover:-translate-y-0.5 shadow-bento"
                                         }`}
                                 >
                                     {food}
@@ -169,8 +169,8 @@ export default function FoodCompatibilityPage() {
                                     key={food}
                                     onClick={() => setFood2(food)}
                                     className={`py-2 px-2 border border-slate-900 font-bold text-xs transition-all duration-300 ${food2 === food
-                                            ? "bg-pastel-blue -translate-y-1 shadow-bento-hover"
-                                            : "bg-white hover:-translate-y-0.5 shadow-bento"
+                                        ? "bg-pastel-blue -translate-y-1 shadow-bento-hover"
+                                        : "bg-white hover:-translate-y-0.5 shadow-bento"
                                         }`}
                                 >
                                     {food}
@@ -284,21 +284,87 @@ export default function FoodCompatibilityPage() {
             </div>
 
             {/* 팁 섹션 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="result-card bg-neon-pink text-white text-center">
-                    <div className="text-4xl mb-2">💕</div>
-                    <h3 className="text-lg font-black mb-2">음식 궁합</h3>
-                    <p className="text-sm font-medium">과학적 근거는 없지만 재미있어요!</p>
+            <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="result-card bg-neon-pink text-white text-center">
+                        <div className="text-4xl mb-2">💕</div>
+                        <h3 className="text-lg font-black mb-2">음식 궁합</h3>
+                        <p className="text-sm font-medium">과학적 근거는 없지만 재미있어요!</p>
+                    </div>
+                    <div className="result-card bg-neon-yellow text-center">
+                        <div className="text-4xl mb-2">🍽️</div>
+                        <h3 className="text-lg font-black mb-2">새로운 조합</h3>
+                        <p className="text-sm font-medium">다양한 음식을 시도해보세요</p>
+                    </div>
+                    <div className="result-card bg-neon-blue text-center">
+                        <div className="text-4xl mb-2">😋</div>
+                        <h3 className="text-lg font-black mb-2">맛의 발견</h3>
+                        <p className="text-sm font-medium">의외의 조합이 최고일 수도!</p>
+                    </div>
                 </div>
-                <div className="result-card bg-neon-yellow text-center">
-                    <div className="text-4xl mb-2">🍽️</div>
-                    <h3 className="text-lg font-black mb-2">새로운 조합</h3>
-                    <p className="text-sm font-medium">다양한 음식을 시도해보세요</p>
-                </div>
-                <div className="result-card bg-neon-blue text-center">
-                    <div className="text-4xl mb-2">😋</div>
-                    <h3 className="text-lg font-black mb-2">맛의 발견</h3>
-                    <p className="text-sm font-medium">의외의 조합이 최고일 수도!</p>
+
+                {/* 상세 가이드 섹션 */}
+                <div className="pt-8 border-t-2 border-slate-200 prose prose-slate max-w-none">
+                    <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
+                        🍽️ 결정 장애를 위한 점심 메뉴 선정 가이드
+                    </h3>
+
+                    <div className="space-y-8">
+                        <section>
+                            <h4 className="text-xl font-bold text-slate-800 mb-3">1. 오늘의 메뉴, 기분 따라 고르세요!</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="bg-white p-4 rounded-lg border border-slate-200">
+                                    <strong className="block text-lg text-red-500 mb-1">스트레스 만땅일 때 😡</strong>
+                                    <p className="text-sm text-slate-600">
+                                        매운맛이 필요합니다! 캡사이신이 엔돌핀을 돌게 해줘요.
+                                        <br />추천: 마라탕, 엽기떡볶이, 불닭발, 매운 짬뽕
+                                    </p>
+                                </div>
+                                <div className="bg-white p-4 rounded-lg border border-slate-200">
+                                    <strong className="block text-lg text-blue-500 mb-1">피곤하고 기운 없을 때 😫</strong>
+                                    <p className="text-sm text-slate-600">
+                                        고단백 보양식이 정답입니다. 뜨끈한 국물로 속을 달래보세요.
+                                        <br />추천: 삼계탕, 순대국, 추어탕, 장어덮밥
+                                    </p>
+                                </div>
+                                <div className="bg-white p-4 rounded-lg border border-slate-200">
+                                    <strong className="block text-lg text-yellow-500 mb-1">비 오는 날 ☔</strong>
+                                    <p className="text-sm text-slate-600">
+                                        지글지글 기름 소리나 따뜻한 국물이 당기죠.
+                                        <br />추천: 파전+막걸리, 칼국수, 우동, 김치찌개
+                                    </p>
+                                </div>
+                                <div className="bg-white p-4 rounded-lg border border-slate-200">
+                                    <strong className="block text-lg text-green-500 mb-1">다이어트 중일 때 🥗</strong>
+                                    <p className="text-sm text-slate-600">
+                                        맛있지만 가볍게! 죄책감 없는 메뉴를 선택하세요.
+                                        <br />추천: 포케, 샐러드, 월남쌈, 샤브샤브(국물 없이)
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h4 className="text-xl font-bold text-slate-800 mb-3">2. 실패 없는 '단짠단짠' 법칙</h4>
+                            <p className="text-slate-600 leading-relaxed mb-4">
+                                맛의 밸런스를 맞추면 식사가 훨씬 즐거워집니다.
+                                메인 요리가 <strong>짠맛(나트륨)</strong> 위주라면, 사이드나 후식은 <strong>달콤한 맛</strong>으로 중화시켜주세요.
+                                반대로 <strong>기름진 음식(치킨, 피자)</strong>을 먹을 땐 <strong>탄산이나 매콤한 소스</strong>가 필수입니다.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h4 className="text-xl font-bold text-slate-800 mb-3">3. 직장인 점심 메뉴 월드컵 4강</h4>
+                            <div className="bg-pastel-mint bg-opacity-30 p-5 rounded-xl border border-pastel-mint">
+                                <ol className="list-decimal list-inside space-y-2 text-slate-700 font-medium">
+                                    <li><strong>김치찌개:</strong> 한국인의 소울 푸드, 계란말이 추가는 국룰!</li>
+                                    <li><strong>제육볶음:</strong> 남자들의 영원한 1픽, 가성비 최고.</li>
+                                    <li><strong>돈가스:</strong> 바삭한 식감이 스트레스를 날려버림.</li>
+                                    <li><strong>짜장면:</strong> 빠르고 맛있게, 탕수육 없으면 섭섭함.</li>
+                                </ol>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>

@@ -249,22 +249,93 @@ export default function HousingCalculatorPage() {
             </div>
 
             {/* 팁 섹션 */}
-            <div className="result-card bg-pastel-blue">
-                <h3 className="text-lg font-black mb-3">💡 저축 팁</h3>
-                <ul className="space-y-2 text-sm font-medium text-slate-800">
-                    <li className="flex items-start gap-2">
-                        <span className="font-black">•</span>
-                        <span>월급의 <strong>30-40%</strong>를 저축하는 것이 이상적입니다.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                        <span className="font-black">•</span>
-                        <span>자동이체를 설정하면 저축이 더 쉬워집니다.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                        <span className="font-black">•</span>
-                        <span>목표 기간이 너무 길다면 월 저축액을 늘려보세요!</span>
-                    </li>
-                </ul>
+            <div className="space-y-6">
+                <div className="result-card bg-pastel-blue">
+                    <h3 className="text-lg font-black mb-3">💡 저축 팁</h3>
+                    <ul className="space-y-2 text-sm font-medium text-slate-800">
+                        <li className="flex items-start gap-2">
+                            <span className="font-black">•</span>
+                            <span>월급의 <strong>30-40%</strong>를 저축하는 것이 이상적입니다.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <span className="font-black">•</span>
+                            <span>자동이체를 설정하면 저축이 더 쉬워집니다.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <span className="font-black">•</span>
+                            <span>목표 기간이 너무 길다면 월 저축액을 늘려보세요!</span>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* 상세 가이드 섹션 */}
+                <div className="pt-8 border-t-2 border-slate-200 prose prose-slate max-w-none">
+                    <h3 className="text-2xl font-black text-slate-900 mb-6 pb-2 border-b-2 border-slate-200">
+                        🏠 내 집 마련을 위한 필수 부동산 상식
+                    </h3>
+
+                    <div className="space-y-8">
+                        <section>
+                            <h4 className="text-xl font-bold text-slate-800 mb-3">1. 집값 외에 필요한 '히든 코스트' (취득세 등)</h4>
+                            <p className="text-slate-600 leading-relaxed mb-4">
+                                5억짜리 아파트를 산다고 해서 딱 5억만 필요한 게 아닙니다.
+                                등기를 칠 때 내야 하는 <strong>세금과 부대비용</strong>을 반드시 예산에 포함해야 합니다.
+                            </p>
+                            <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                                <ul className="list-disc list-inside text-sm text-slate-700 space-y-2">
+                                    <li><strong>취득세:</strong> 집값의 1~3% (생애최초 구입 시 감면 혜택 확인 필수!)</li>
+                                    <li><strong>지방교육세 & 농어촌특별세:</strong> 취득세의 약 10% 수준</li>
+                                    <li><strong>부동산 중개보수(복비):</strong> 거래 금액의 0.4% ~ 0.5% (협의 가능)</li>
+                                    <li><strong>법무사 비용 및 채권 매입비:</strong> 등기 처리를 위한 비용</li>
+                                </ul>
+                                <p className="mt-3 text-xs text-blue-600 font-bold">
+                                    TIP: 집값의 약 1.5% ~ 2% 정도를 여유 자금으로 준비해두세요.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h4 className="text-xl font-bold text-slate-800 mb-3">2. 공급면적 vs 전용면적, 뭐가 내 집 크기?</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="bg-pastel-yellow bg-opacity-30 p-4 rounded-lg border border-pastel-yellow">
+                                    <strong className="block text-lg text-slate-900 mb-2">전용면적 (실평수)</strong>
+                                    <p className="text-sm text-slate-600">
+                                        현관 안쪽, 우리가 실제로 신발 벗고 생활하는 공간입니다.
+                                        아파트 <strong>84㎡(국민평형)</strong>는 보통 '32~34평형'이라고 부르지만, 실제 쓰는 공간은 약 25.7평입니다.
+                                    </p>
+                                </div>
+                                <div className="bg-pastel-blue bg-opacity-30 p-4 rounded-lg border border-pastel-blue">
+                                    <strong className="block text-lg text-slate-900 mb-2">공급면적 (분양면적)</strong>
+                                    <p className="text-sm text-slate-600">
+                                        전용면적 + 주거공용면적(계단, 복도, 엘리베이터 등)입니다.
+                                        집값을 말할 때 흔히 쓰는 <strong>'평당 가격'</strong>은 이 공급면적을 기준으로 합니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h4 className="text-xl font-bold text-slate-800 mb-3">3. 임장(현장 답사) 체크리스트</h4>
+                            <p className="text-slate-600 mb-4">
+                                인터넷으로 시세만 보지 말고, 반드시 직접 가서 확인해야 합니다.
+                            </p>
+                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-700">
+                                <li className="flex items-center gap-2">
+                                    <span className="text-green-500">✔</span> 낮과 밤, 평일과 주말의 소음 차이
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="text-green-500">✔</span> 주차장 여유 공간 (이중 주차 여부)
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="text-green-500">✔</span> 결로, 누수 흔적 (베란다 구석 확인)
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="text-green-500">✔</span> 관리비 고지서 확인 (평균 냉난방비)
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
             </div>
         </div>
     );
