@@ -38,7 +38,6 @@ export default function SalaryCalculatorPage() {
     const chickenCount = result ? convertToChicken(result.netSalary) : 0;
     const coffeeCount = result ? convertToCoffee(result.netSalary) : 0;
 
-    // 렌더링 시작
     return (
         <div className="space-y-6">
             {/* 페이지 헤더 */}

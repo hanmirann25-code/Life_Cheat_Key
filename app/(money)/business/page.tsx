@@ -335,6 +335,6 @@ export default function BusinessCalculatorPage() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
