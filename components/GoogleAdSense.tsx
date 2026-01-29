@@ -3,10 +3,10 @@
 import Script from "next/script";
 
 type Props = {
-    pId: string;
+    publisherId: string;
 };
 
-const GoogleAdSense = ({ pId }: Props) => {
+const GoogleAdSense = ({ publisherId }: Props) => {
     if (process.env.NODE_ENV !== "production") {
         return null;
     }
@@ -14,7 +14,7 @@ const GoogleAdSense = ({ pId }: Props) => {
     return (
         <Script
             async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${pId}`}
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${publisherId}`}
             crossOrigin="anonymous"
             strategy="afterInteractive"
         />

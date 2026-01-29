@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
-import GoogleAdSense from "@/components/GoogleAdSense";
+import GoogleAdSense from "@/components/GoogleAdSense"; // @next/third-parties 미지원으로 인한 커스텀 컴포넌트 사용
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 // Trigger Vercel build
 
@@ -71,9 +72,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <head>
-        <GoogleAdSense pId="XXXXXXXXXXXXXXXX" /> {/* AdSense Publisher ID를 여기에 입력하세요 (예: 1234567890123456) */}
-      </head>
       <body className="min-h-screen bg-white">
         {/* Structured Data */}
         <script
@@ -160,6 +158,14 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+
+        {/* Google Analytics & AdSense */}
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        )}
+        {process.env.NEXT_PUBLIC_GOOGLE_ADSENSE && (
+          <GoogleAdSense publisherId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE} />
+        )}
       </body>
     </html>
   );

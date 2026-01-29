@@ -181,8 +181,8 @@ export default function LoanCalculatorPage() {
               <button
                 onClick={() => setComparisonMode(!comparisonMode)}
                 className={`px-4 py-2 border border-slate-900 font-bold text-sm transition-all duration-300 ${comparisonMode
-                    ? "bg-pastel-green -translate-y-0.5 shadow-bento"
-                    : "bg-white hover:-translate-y-0.5 shadow-bento"
+                  ? "bg-pastel-green -translate-y-0.5 shadow-bento"
+                  : "bg-white hover:-translate-y-0.5 shadow-bento"
                   }`}
               >
                 {comparisonMode ? "ON" : "OFF"}
@@ -203,8 +203,8 @@ export default function LoanCalculatorPage() {
                 <button
                   onClick={() => setRepaymentType("equal")}
                   className={`py-3 px-4 border border-slate-900 font-bold text-base transition-all duration-300 ${repaymentType === "equal"
-                      ? "bg-pastel-blue -translate-y-1 shadow-bento-hover"
-                      : "bg-white hover:-translate-y-0.5 shadow-bento"
+                    ? "bg-pastel-blue -translate-y-1 shadow-bento-hover"
+                    : "bg-white hover:-translate-y-0.5 shadow-bento"
                     }`}
                 >
                   원리금균등
@@ -212,8 +212,8 @@ export default function LoanCalculatorPage() {
                 <button
                   onClick={() => setRepaymentType("maturity")}
                   className={`py-3 px-4 border border-slate-900 font-bold text-base transition-all duration-300 ${repaymentType === "maturity"
-                      ? "bg-pastel-blue -translate-y-1 shadow-bento-hover"
-                      : "bg-white hover:-translate-y-0.5 shadow-bento"
+                    ? "bg-pastel-blue -translate-y-1 shadow-bento-hover"
+                    : "bg-white hover:-translate-y-0.5 shadow-bento"
                     }`}
                 >
                   만기일시
@@ -460,25 +460,51 @@ export default function LoanCalculatorPage() {
       </div>
 
       {/* 설명 섹션 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div className="result-card bg-pastel-blue hover:-translate-y-1 transition-all">
-          <h3 className="text-lg font-black mb-2 flex items-center gap-2">
-            <InformationCircleIcon className="w-5 h-5" />
-            <span>원리금균등상환이란?</span>
-          </h3>
-          <p className="font-medium text-sm text-slate-800">
-            매월 <strong>동일한 금액</strong>을 납부하는 방식입니다. 초반에는 이자 비중이 크고,
-            시간이 갈수록 원금 비중이 커집니다. 대부분의 주택담보대출에서 사용됩니다.
-          </p>
+      {/* SEO & 유용한 정보 섹션 (아코디언/카드 스타일) */}
+      <div className="space-y-6 pt-8 border-t-2 border-slate-200">
+        <h3 className="text-2xl font-black mb-4 flex items-center gap-2">
+          <SparklesIcon className="w-6 h-6 text-neon-yellow" />
+          <span>대출 이자 줄이는 꿀팁 & 상식</span>
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Tip 1 */}
+          <div className="bento-card bg-white hover:-translate-y-1 transition-all">
+            <h4 className="font-bold text-lg mb-2">💡 중도상환수수료 확인하기</h4>
+            <p className="text-slate-600 text-sm">
+              대출을 받을 때 '중도상환수수료'가 면제되는 상품인지 꼭 확인하세요.
+              여유 자금이 생길 때마다 원금을 조금씩이라도 갚으면 총 이자를 획기적으로 줄일 수 있습니다.
+            </p>
+          </div>
+
+          {/* Tip 2 */}
+          <div className="bento-card bg-white hover:-translate-y-1 transition-all">
+            <h4 className="font-bold text-lg mb-2">📉 금리인하요구권 활용</h4>
+            <p className="text-slate-600 text-sm">
+              승진, 연봉 인상 등 신용 상태가 개선되었다면 은행에 당당하게 '금리 인하'를 요구하세요.
+              법적으로 보장된 소중한 권리입니다.
+            </p>
+          </div>
+
+          {/* Tip 3 */}
+          <div className="bento-card bg-white hover:-translate-y-1 transition-all">
+            <h4 className="font-bold text-lg mb-2">🔄 대출 갈아타기 (대환)</h4>
+            <p className="text-slate-600 text-sm">
+              더 낮은 금리의 상품이 있다면 갈아타는 것이 이득일 수 있습니다.
+              다만, 중도상환수수료와 새 대출의 부대비용을 꼼꼼히 비교해보세요.
+            </p>
+          </div>
         </div>
-        <div className="result-card bg-pastel-green hover:-translate-y-1 transition-all">
-          <h3 className="text-lg font-black mb-2 flex items-center gap-2">
-            <InformationCircleIcon className="w-5 h-5" />
-            <span>만기일시상환이란?</span>
-          </h3>
-          <p className="font-medium text-sm text-slate-800">
-            대출 기간 동안 <strong>이자만 납부</strong>하고, 만기에 원금을 한 번에 갚는
-            방식입니다. 초기 부담은 적지만, 총 이자는 더 많이 나옵니다.
+
+        {/* 재미있는 기능 설명 */}
+        <div className="result-card bg-pastel-yellow mt-6">
+          <h4 className="font-bold text-lg mb-3">🍗 치킨 환산 기능이란?</h4>
+          <p className="text-slate-700 text-sm leading-relaxed">
+            우리가 무심코 내는 대출 이자가 실제로 얼마나 큰 금액인지 체감하기 어렵습니다.
+            <strong>인생 치트키</strong>는 이를 가장 직관적인 화폐 단위인 '치킨'으로 환산해드립니다.
+            이자를 줄여서 1년 뒤, 10년 뒤에 몇 마리의 치킨을 더 먹을 수 있는지 확인해보세요!
+            <br /><br />
+            (치킨 1마리 가격은 20,000원으로 가정했습니다.)
           </p>
         </div>
       </div>
