@@ -187,6 +187,20 @@ export default function Home() {
             color="green"
             size="small"
           />
+
+          <BentoCard
+            title="헤어 시뮬레이터"
+            description="나에게 어울리는 머리는? 가상으로 체험"
+            icon={<SparklesIcon className="w-8 h-8" />}
+            href="/hairstyle"
+            color="yellow"
+            size="small"
+          >
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-black text-neon-yellow text-sm font-bold border-2 border-black">
+              <SparklesIcon className="w-4 h-4" />
+              신규 기능
+            </div>
+          </BentoCard>
         </div>
 
         {/* Info Archive Section */}
