@@ -83,7 +83,7 @@ export default function RootLayout({
               '@type': 'WebSite',
               name: '인생 치트키',
               url: 'https://life-cheat-key.com',
-              description: '복잡한 인생, 클릭 몇 번으로 쉽게 풀자. 대출 계산기, 점심 메뉴 추천, AI 작가 등 유용한 도구 모음',
+              description: '복잡한 인생, 클릭 몇 번으로 쉽게! 대출 이자 치킨 환산부터 결정 장애 해결 슬롯, AI 거절 멘트 생성기까지 - 당신의 삶을 편하게 만드는 인생 치트키.',
               potentialAction: {
                 '@type': 'SearchAction',
                 target: 'https://life-cheat-key.com/?q={search_term_string}',

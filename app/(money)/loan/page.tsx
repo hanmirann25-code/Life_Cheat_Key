@@ -583,6 +583,29 @@ export default function LoanCalculatorPage() {
             </div>
           </div>
         </section>
+        {/* 4. 연관 도구 추천 (내부 링크 최적화) */}
+        <section className="bg-slate-900 rounded-2xl p-8 text-white mt-8">
+          <h3 className="text-2xl font-black mb-6 flex items-center gap-2 text-neon-yellow">
+            <span className="text-3xl">🔗</span>
+            <span>이자 계산 후 추천하는 다음 단계</span>
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a
+              href="/salary"
+              className="bg-white/10 hover:bg-white/20 p-4 border border-white/20 rounded-xl transition-all group"
+            >
+              <p className="font-black text-xl mb-1 group-hover:text-neon-yellow">월급 실수령액 계산기 →</p>
+              <p className="text-slate-400 text-sm">대출 상환을 위한 내 진짜 월급 확인하기</p>
+            </a>
+            <a
+              href="/housing"
+              className="bg-white/10 hover:bg-white/20 p-4 border border-white/20 rounded-xl transition-all group"
+            >
+              <p className="font-black text-xl mb-1 group-hover:text-neon-yellow">내 집 마련 시뮬레이션 →</p>
+              <p className="text-slate-400 text-sm">대출을 끼고 서울 아파트를 사면 얼마나 걸릴까?</p>
+            </a>
+          </div>
+        </section>
       </div>
     </div>
   );

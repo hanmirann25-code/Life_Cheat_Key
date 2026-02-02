@@ -240,6 +240,30 @@ export default function LunchSlotPage() {
                         </div>
                     </section>
                 </div>
+
+                {/* 4. 연관 도구 추천 (내부 링크 최적화) */}
+                <section className="mt-12 bg-black rounded-2xl p-8 text-white border-4 border-black shadow-brutal">
+                    <h3 className="text-2xl font-black mb-6 flex items-center gap-2 text-neon-yellow">
+                        <span className="text-3xl">🔗</span>
+                        <span>메뉴 결정 후 다음 단계</span>
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <a
+                            href="/vs"
+                            className="bg-white/10 hover:bg-white/20 p-5 border-2 border-white/20 rounded-xl transition-all group"
+                        >
+                            <p className="font-black text-xl mb-1 group-hover:text-neon-yellow text-white">VS 분석실 →</p>
+                            <p className="text-slate-400 text-sm">짜장 vs 짬뽕? 치킨 vs 피자? 스펙으로 비교하기</p>
+                        </a>
+                        <a
+                            href="/food"
+                            className="bg-white/10 hover:bg-white/20 p-5 border-2 border-white/20 rounded-xl transition-all group"
+                        >
+                            <p className="font-black text-xl mb-1 group-hover:text-neon-yellow text-white">음식 궁합 확인 →</p>
+                            <p className="text-slate-400 text-sm">고른 메뉴와 찰떡궁합인 음식이 있을까?</p>
+                        </a>
+                    </div>
+                </section>
             </div>
         </div>
     );

@@ -392,24 +392,29 @@ export default function RefusalGeneratorPage() {
                 </section>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                <BentoCard
-                    title="핑계/사과문"
-                    description="약속을 어겼거나 실수를 했을 때"
-                    icon={<ChatBubbleLeftRightIcon className="w-6 h-6" />}
-                    href="/excuse"
-                    color="green"
-                    size="small"
-                />
-                <BentoCard
-                    title="탄원서 작성"
-                    description="법적인 도움이 필요할 때"
-                    icon={<ClipboardDocumentCheckIcon className="w-6 h-6" />}
-                    href="/petition"
-                    color="purple"
-                    size="small"
-                />
-            </div>
+            {/* 4. 연관 도구 추천 (내부 링크 최적화) */}
+            <section className="bg-slate-900 rounded-2xl p-8 text-white mt-12">
+                <h3 className="text-2xl font-black mb-6 flex items-center gap-2 text-neon-yellow">
+                    <span className="text-3xl">🔗</span>
+                    <span>멘트 완성 후 추천하는 다음 단계</span>
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a
+                        href="/excuse"
+                        className="bg-white/10 hover:bg-white/20 p-5 border border-white/20 rounded-xl transition-all group"
+                    >
+                        <p className="font-black text-xl mb-1 group-hover:text-neon-yellow">핑계 / 사과문 생성기 →</p>
+                        <p className="text-slate-400 text-sm">약속을 취소하거나 실수를 만회해야 할 때</p>
+                    </a>
+                    <a
+                        href="/petition"
+                        className="bg-white/10 hover:bg-white/20 p-5 border border-white/20 rounded-xl transition-all group"
+                    >
+                        <p className="font-black text-xl mb-1 group-hover:text-neon-yellow">AI 탄원서 작성 도우미 →</p>
+                        <p className="text-slate-400 text-sm">진심을 담은 탄원서/반성문 초안이 필요할 때</p>
+                    </a>
+                </div>
+            </section>
         </div>
     );
 }
