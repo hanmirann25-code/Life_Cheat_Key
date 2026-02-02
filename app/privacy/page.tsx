@@ -2,7 +2,17 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: '개인정보 처리방침',
-    description: '인생 치트키의 개인정보 처리방침입니다.',
+    description: '인생 치트키는 사용자의 개인정보를 소중하게 생각합니다. 서비스 이용과 관련된 개인정보 처리방침을 확인하세요.',
+    openGraph: {
+        title: '개인정보 처리방침 | 인생 치트키',
+        description: '인생 치트키는 사용자의 개인정보를 소중하게 생각합니다. 서비스 이용과 관련된 개인정보 처리방침을 확인하세요.',
+        url: 'https://life-cheat-key.com/privacy',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: '개인정보 처리방침 | 인생 치트키',
+        description: '인생 치트키는 사용자의 개인정보를 소중하게 생각합니다. 서비스 이용과 관련된 개인정보 처리방침을 확인하세요.',
+    },
 };
 
 export default function PrivacyPage() {
@@ -34,7 +44,9 @@ export default function PrivacyPage() {
                         </p>
                         <p>
                             현재 본 사이트는 별도의 회원가입 절차가 없으며, 직접적인 개인정보를 수집하지 않습니다.
-                            다만, 서비스 이용 과정에서 자동으로 생성되는 쿠키 및 로그 정보는 서비스 개선을 위해
+                            다만, '습관 형성 게임' 등 일부 서비스는 사용자의 편의를 위해 입력한 데이터를
+                            브라우저의 로컬 스토리지(Local Storage)에 저장하며, 이는 서버로 전송되지 않습니다.
+                            또한, 서비스 이용 과정에서 자동으로 생성되는 쿠키 및 로그 정보는 서비스 개선을 위해
                             일시적으로 수집될 수 있습니다.
 
                             또한, 본 사이트는 구글 애드센스(Google AdSense) 광고를 게재하고 있습니다.

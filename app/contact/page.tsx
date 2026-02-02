@@ -1,8 +1,18 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: '연락처',
-    description: '인생 치트키에 문의하거나 제안사항을 보내주세요.',
+    title: '연락처 (문의/제안/제휴)',
+    description: '인생 치트키 서비스 이용 중 문의사항, 버그 리포트, 기능 제안, 제휴 문의가 있으신가요? 언제든지 연락 주세요.',
+    openGraph: {
+        title: '연락처 (문의/제안/제휴) | 인생 치트키',
+        description: '인생 치트키 서비스 이용 중 문의사항, 버그 리포트, 기능 제안, 제휴 문의가 있으신가요? 언제든지 연락 주세요.',
+        url: 'https://life-cheat-key.com/contact',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: '연락처 (문의/제안/제휴) | 인생 치트키',
+        description: '인생 치트키 서비스 이용 중 문의사항, 버그 리포트, 기능 제안, 제휴 문의가 있으신가요? 언제든지 연락 주세요.',
+    },
 };
 
 export default function ContactPage() {

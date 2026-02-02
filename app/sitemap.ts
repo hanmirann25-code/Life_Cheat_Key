@@ -73,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/hairstyle`,
+      url: `${baseUrl}/habit-tracker`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,

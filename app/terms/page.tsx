@@ -2,7 +2,17 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: '이용약관',
-    description: '인생 치트키의 이용약관입니다.',
+    description: '인생 치트키 서비스 이용과 관련된 권리, 의무, 책임사항을 규정한 이용약관입니다.',
+    openGraph: {
+        title: '이용약관 | 인생 치트키',
+        description: '인생 치트키 서비스 이용과 관련된 권리, 의무, 책임사항을 규정한 이용약관입니다.',
+        url: 'https://life-cheat-key.com/terms',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: '이용약관 | 인생 치트키',
+        description: '인생 치트키 서비스 이용과 관련된 권리, 의무, 책임사항을 규정한 이용약관입니다.',
+    },
 };
 
 export default function TermsPage() {
@@ -58,6 +68,7 @@ export default function TermsPage() {
                             <li>대출 이자 계산 서비스</li>
                             <li>월급 실수령액 계산 서비스</li>
                             <li>점심 메뉴 추천 서비스</li>
+                            <li>습관 형성 및 목표 관리 서비스</li>
                             <li>AI 기반 텍스트 생성 서비스</li>
                             <li>기타 생활 편의 도구</li>
                         </ul>

@@ -153,6 +153,21 @@ export default function Home() {
           </BentoCard>
 
           <BentoCard
+            title="습관 형성 게임"
+            description="목표 달성을 게임처럼! AI 코치와 함께 레벨업하세요"
+            icon={<TrophyIcon className="w-8 h-8" />}
+            href="/habit-tracker"
+            color="green"
+            size="large"
+          >
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-black text-neon-green text-sm font-bold border-2 border-black">
+              <SparklesIcon className="w-4 h-4" />
+              AI 활용
+            </div>
+          </BentoCard>
+
+
+          <BentoCard
             title="VS 분석실"
             description="치킨 vs 피자? 스펙 비교로 현명한 선택"
             icon={<ScaleIcon className="w-8 h-8" />}
@@ -188,19 +203,7 @@ export default function Home() {
             size="small"
           />
 
-          <BentoCard
-            title="헤어 시뮬레이터"
-            description="나에게 어울리는 머리는? 가상으로 체험"
-            icon={<SparklesIcon className="w-8 h-8" />}
-            href="/hairstyle"
-            color="yellow"
-            size="small"
-          >
-            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-black text-neon-yellow text-sm font-bold border-2 border-black">
-              <SparklesIcon className="w-4 h-4" />
-              신규 기능
-            </div>
-          </BentoCard>
+
         </div>
 
         {/* Info Archive Section */}
