@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import GoogleAdSense from "@/components/GoogleAdSense"; // @next/third-parties 미지원으로 인한 커스텀 컴포넌트 사용
 import { GoogleAnalytics } from "@next/third-parties/google";
+import PersistentStorageInit from "@/components/PersistentStorageInit";
 
 // Trigger Vercel build
 
@@ -187,6 +188,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GOOGLE_ADSENSE && (
           <GoogleAdSense publisherId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE} />
         )}
+        <PersistentStorageInit />
       </body>
     </html>
   );
