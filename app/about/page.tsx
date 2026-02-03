@@ -55,6 +55,7 @@ export default function AboutPage() {
                                     <li>월급 실수령액 계산</li>
                                     <li>주택 구매 시뮬레이터</li>
                                     <li>창업 수익 계산</li>
+                                    <li>AI 금융 상담소 (New)</li>
                                 </ul>
                             </div>
 

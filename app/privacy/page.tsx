@@ -59,6 +59,20 @@ export default function PrivacyPage() {
                     </section>
 
                     <section>
+                        <h2 className="text-2xl font-bold mb-4">3. AI 서비스 관련 개인정보 처리 (금융 상담소 등)</h2>
+                        <p className="mb-4">
+                            '금융 상담소', '거절 멘트 생성기' 등 AI(인공지능) 기술을 활용한 서비스 이용 시,
+                            사용자가 입력한 텍스트 정보(신용점수, 고민 내용 등)는 답변 생성을 위해
+                            OpenAI사의 API로 전송됩니다.
+                        </p>
+                        <p className="mb-4">
+                            해당 데이터는 오직 <strong>실시간 답변 생성의 목적</strong>으로만 활용되며,
+                            사이트의 서버나 데이터베이스에 영구적으로 저장되거나 별도의 용도로 수집되지 않습니다.
+                            민감한 개인정보(주민등록번호, 계좌 비밀번호 등)는 절대 입력하지 않도록 주의해 주시기 바랍니다.
+                        </p>
+                    </section>
+
+                    <section>
                         <h2 className="text-2xl font-bold mb-4">3. 정보주체의 권리·의무 및 그 행사방법</h2>
                         <p className="mb-4">
                             정보주체는 사이트에 대해 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.
