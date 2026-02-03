@@ -34,13 +34,14 @@ export default function AISuggestions({ onAddHabit }: AISuggestionsProps) {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    action: 'suggest_habits',
+                    type: 'suggest_habits',
                     goal: goal.trim(),
                 }),
             });
 
             if (!response.ok) {
-                throw new Error('AI 추천에 실패했습니다');
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error || 'AI 추천에 실패했습니다');
             }
 
             const data = await response.json();
@@ -128,8 +129,8 @@ export default function AISuggestions({ onAddHabit }: AISuggestionsProps) {
                                                 <span className="text-2xl">{categoryConfig.icon}</span>
                                                 <h4 className="text-lg font-black">{suggestion.name}</h4>
                                                 <span className={`text-xs px-2 py-1 border-2 border-black font-bold ${suggestion.difficulty === 'easy' ? 'bg-green-200' :
-                                                        suggestion.difficulty === 'medium' ? 'bg-yellow-200' :
-                                                            'bg-red-200'
+                                                    suggestion.difficulty === 'medium' ? 'bg-yellow-200' :
+                                                        'bg-red-200'
                                                     }`}>
                                                     {suggestion.difficulty === 'easy' ? '쉬움' :
                                                         suggestion.difficulty === 'medium' ? '보통' : '어려움'}

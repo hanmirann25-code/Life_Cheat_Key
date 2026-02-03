@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
                 userPrompt = `목표: ${goal}\n\n위 목표를 달성하기 위한 5가지 구체적인 습관을 추천해주세요. 다음 JSON 형식으로 응답해주세요:
         {
-          "habits": [
+          "suggestions": [
             {
               "name": "습관 이름",
               "description": "습관에 대한 설명",
@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
                 const jsonMatch = content.match(/\{[\s\S]*\}/);
                 if (jsonMatch) {
                     const parsed = JSON.parse(jsonMatch[0]);
-                    return NextResponse.json({ success: true, data: parsed });
+                    return NextResponse.json({ success: true, suggestions: parsed.suggestions || parsed.habits });
                 }
             } catch (e) {
                 // If parsing fails, return as text
