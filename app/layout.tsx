@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "인생 치트키 | 모든 생활 도구와 AI 생성기",
     template: "%s | 인생 치트키"
   },
-  description: "복잡한 인생, 클릭 몇 번으로 쉽게! 연봉 실수령액 계산기, AI 반성문/변명 생성기, 대출 이자 계산 등 당신의 삶을 편하게 만드는 유용한 도구 모음.",
+  description: "복잡한 인생을 클릭 한 번으로 쉽게! 연봉/대출 계산기, AI 변명 생성 등 삶을 편하게 만드는 무료 생활 도구 모음.",
   keywords: [
     "인생 치트키",
     "생활 도구",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     url: 'https://life-cheat-key.com',
     title: '인생 치트키 | 모든 생활 도구와 AI 생성기',
-    description: '연봉 계산기, AI 반성문, 대출 이자 계산 등 인생을 편하게 만드는 무료 생활 도구 모음.',
+    description: '복잡한 인생을 클릭 한 번으로 쉽게! 연봉/대출 계산기, AI 변명 생성 등 삶을 편하게 만드는 무료 생활 도구 모음.',
     siteName: '인생 치트키',
     images: [
       {
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '인생 치트키 | 모든 생활 도구와 AI 생성기',
-    description: '연봉 계산기, AI 반성문, 대출 이자 계산 등 인생을 편하게 만드는 무료 생활 도구 모음.',
+    description: '복잡한 인생을 클릭 한 번으로 쉽게! 연봉/대출 계산기, AI 변명 생성 등 삶을 편하게 만드는 무료 생활 도구 모음.',
   },
   robots: {
     index: true,
@@ -94,7 +94,7 @@ export default function RootLayout({
               '@type': 'WebSite',
               name: '인생 치트키',
               url: 'https://life-cheat-key.com',
-              description: '복잡한 인생, 클릭 몇 번으로 쉽게! 대출 이자 치킨 환산부터 결정 장애 해결 슬롯, AI 거절 멘트 생성기까지 - 당신의 삶을 편하게 만드는 인생 치트키.',
+              description: '복잡한 인생을 클릭 한 번으로 쉽게! 연봉/대출 계산기, AI 변명 생성 등 삶을 편하게 만드는 무료 생활 도구 모음.',
               potentialAction: {
                 '@type': 'SearchAction',
                 target: 'https://life-cheat-key.com/?q={search_term_string}',
