@@ -166,6 +166,15 @@ export default function RootLayout({
                 <a href="/contact" className="hover:text-neon-yellow transition-colors">
                   연락처
                 </a>
+                <span className="text-gray-600">|</span>
+                <a
+                  href="https://life-cheat-key.blogspot.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-black hover:text-neon-pink underline decoration-4 underline-offset-4 transition-colors"
+                >
+                  공식 블로그 📝
+                </a>
               </div>
             </div>
           </div>
