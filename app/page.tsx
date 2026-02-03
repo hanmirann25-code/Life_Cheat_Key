@@ -150,6 +150,20 @@ export default function Home() {
             color="pink"
             size="small"
           />
+
+          <BentoCard
+            title="금융 상담소"
+            description="10초 컷! AI가 알려주는 힙한 금융 솔루션"
+            icon={<ChatBubbleLeftRightIcon className="w-8 h-8" />}
+            href="/consult"
+            color="purple"
+            size="medium"
+          >
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-black text-white text-sm font-bold border-2 border-black">
+              <SparklesIcon className="w-4 h-4 text-yellow-400" />
+              NEW
+            </div>
+          </BentoCard>
         </div>
 
         {/* Choice & Game Section */}
