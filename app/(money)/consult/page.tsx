@@ -19,7 +19,6 @@ const ConsultPage = () => {
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState<any>(null);
     const [error, setError] = useState("");
-    const [copySuccess, setCopySuccess] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -200,25 +199,20 @@ const ConsultPage = () => {
                                 <div className="text-center pt-2">
                                     <p className="text-sm font-bold text-slate-500 mb-2">👇 {result.cta_message}</p>
                                     <div className="flex flex-col gap-2">
-                                        <button
-                                            className={`neo-button w-full transition-all duration-300 ${copySuccess ? 'bg-green-400 text-white' : 'bg-pink-200'}`}
-                                            onClick={() => {
-                                                navigator.clipboard.writeText('hanmirann@nate.com');
-                                                setCopySuccess(true);
-                                                // 2초 후 상태 초기화
-                                                setTimeout(() => setCopySuccess(false), 2000);
-
-                                                // 카카오톡 앱 열기 시도
-                                                window.location.href = 'kakaotalk://';
-                                            }}
+                                        <a
+                                            href="https://open.kakao.com/o/gpJC3Dei"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="neo-button w-full bg-yellow-300 hover:bg-yellow-400 text-center flex items-center justify-center gap-2"
                                         >
-                                            {copySuccess ? '✅ ID 복사 완료! 카톡 실행 중...' : '전문가와 찐하게 상담하기 (카톡)'}
-                                        </button>
-                                        {copySuccess && (
-                                            <p className="text-xs text-indigo-600 font-bold animate-pulse">
-                                                * PC에 카톡이 없다면 실행되지 않을 수 있습니다.
-                                            </p>
-                                        )}
+                                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 3C5.9 3 1 6.9 1 11.8c0 3.2 2.1 6 5.4 7.6-.2.7-.8 2.5-.9 2.9-.2.5.2.8.6.5.4-.3 3.6-2.4 4.2-2.8.5.1 1.1.1 1.7.1 6.1 0 11-3.9 11-8.8S18.1 3 12 3z" />
+                                            </svg>
+                                            전문가와 찐하게 상담하기 (카톡)
+                                        </a>
+                                        <p className="text-xs text-slate-500 text-center">
+                                            * 클릭 시 카카오톡 오픈채팅으로 연결됩니다.
+                                        </p>
                                     </div>
                                 </div>
                             )}
