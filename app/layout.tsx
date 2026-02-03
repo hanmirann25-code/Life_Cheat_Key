@@ -8,24 +8,27 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: {
-    default: "인생 치트키 | Life Cheat Key",
+    default: "인생 치트키 | 모든 생활 도구와 AI 생성기",
     template: "%s | 인생 치트키"
   },
-  description: "복잡한 인생, 클릭 몇 번으로 쉽게! 대출 이자 치킨 환산부터 결정 장애 해결 슬롯, AI 거절 멘트 생성기까지 - 당신의 삶을 편하게 만드는 인생 치트키.",
+  description: "복잡한 인생, 클릭 몇 번으로 쉽게! 연봉 실수령액 계산기, AI 반성문/변명 생성기, 대출 이자 계산 등 당신의 삶을 편하게 만드는 유용한 도구 모음.",
   keywords: [
     "인생 치트키",
+    "생활 도구",
+    "AI 생성기",
+    "연봉 계산기",
+    "2026 연봉 실수령액",
+    "AI 반성문",
+    "AI 변명 생성기",
     "결정 장애 해결",
-    "선택 장애 메뉴 추천",
-    "대출 이자 치킨 환산",
-    "정중한 거절 멘트 생성기",
-    "회식 거절 멘트",
-    "지각 사과문 작가",
-    "연봉별 아파트 구매 시뮬레이션",
-    "사회초년생 재테크 도구",
-    "오늘 뭐 먹지 슬롯",
-    "랜덤 데이트 코스 추천",
-    "금융계산기",
-    "유용한 사이트"
+    "메뉴 추천",
+    "대출 이자 계산기",
+    "거절 멘트 생성",
+    "회식 거절",
+    "지각 사과문",
+    "아파트 구매 시뮬레이션",
+    "재테크 도구",
+    "금융계산기"
   ],
   authors: [{ name: "인생 치트키" }],
   creator: "인생 치트키",
@@ -38,14 +41,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     url: 'https://life-cheat-key.com',
-    title: '인생 치트키 | Life Cheat Key',
-    description: '복잡한 인생, 클릭 몇 번으로 쉽게! 대출 이자 치킨 환산, 결정 장애 해결 슬롯, AI 거절 멘트 생성기 등 유용한 도구 모음.',
+    title: '인생 치트키 | 모든 생활 도구와 AI 생성기',
+    description: '연봉 계산기, AI 반성문, 대출 이자 계산 등 인생을 편하게 만드는 무료 생활 도구 모음.',
     siteName: '인생 치트키',
+    images: [
+      {
+        url: '/og-image.png', // Make sure to use a valid image path if available, or keep default
+        width: 1200,
+        height: 630,
+        alt: '인생 치트키 서비스 소개 이미지',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '인생 치트키 | Life Cheat Key',
-    description: '복잡한 인생, 클릭 몇 번으로 쉽게! 대출 이자 치킨 환산, 결정 장애 해결 슬롯, AI 작가 등 유용한 인생 도구 모음',
+    title: '인생 치트키 | 모든 생활 도구와 AI 생성기',
+    description: '연봉 계산기, AI 반성문, 대출 이자 계산 등 인생을 편하게 만드는 무료 생활 도구 모음.',
   },
   robots: {
     index: true,

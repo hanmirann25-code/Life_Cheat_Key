@@ -24,6 +24,35 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Structured Data for SoftwareApplication */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            name: '인생 치트키',
+            url: 'https://life-cheat-key.com',
+            applicationCategory: 'UtilitiesApplication',
+            operatingSystem: 'Any',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'KRW',
+            },
+            description: '연봉 실수령액 계산기, 대출 이자 계산 등 인생을 편하게 만드는 무료 생활 도구 모음.',
+            featureList: [
+              '2026 연봉 실수령액 계산기',
+              '대출 이자 및 상환액 계산기',
+              'AI 변명 및 사과문 생성기',
+              '점심 메뉴 추천 슬롯',
+              '습관 형성 트래커'
+            ],
+            screenshot: 'https://life-cheat-key.com/og-image.png',
+          }),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-neon-yellow border-b-8 border-black py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">

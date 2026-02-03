@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'AI 거절 멘트 생성기 (사과/회식 거절)',
-    description: '돈 빌려달라는 부탁, 갑작스러운 회식, 지각 사과 등 말하기 난처한 상황을 위한 AI 문구 생성기입니다. 정중하고 깔끔하게 대신 써드립니다.',
-    keywords: ['거절멘트생성기', '회식거절방법', '사과문작성', '지각사과문', '정중한어절', 'AI작가', '글쓰기도우미'],
+    title: 'AI 글쓰기 및 문장 교정 도구 | 인생 치트키',
+    description: '블로그, 이메일, 보고서 등 다양한 목적의 글쓰기를 돕는 AI 작가입니다.',
+    keywords: ['AI 글쓰기', '문장 교정', '블로그 글쓰기', '자기소개서 AI', '이메일 작성', '맞춤법 검사', 'AI 작문'],
     openGraph: {
-        title: 'AI 거절 멘트 생성기 (사과/회식 거절) | 인생 치트키',
-        description: '돈 빌려달라는 부탁, 갑작스러운 회식, 지각 사과 등 말하기 난처한 상황을 위한 AI 문구 생성기입니다. 정중하고 깔끔하게 대신 써드립니다.',
+        title: 'AI 글쓰기 및 문장 교정 도구 | 인생 치트키',
+        description: '블로그, 이메일, 보고서 등 다양한 목적의 글쓰기를 돕는 AI 작가입니다.',
         url: 'https://life-cheat-key.com/writer',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI 거절 멘트 생성기 (사과/회식 거절) | 인생 치트키',
-        description: '돈 빌려달라는 부탁, 갑작스러운 회식, 지각 사과 등 말하기 난처한 상황을 위한 AI 문구 생성기입니다. 정중하고 깔끔하게 대신 써드립니다.',
+        title: 'AI 글쓰기 및 문장 교정 도구 | 인생 치트키',
+        description: '블로그, 이메일, 보고서 등 다양한 목적의 글쓰기를 돕는 AI 작가입니다.',
     },
 };
 
