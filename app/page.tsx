@@ -260,6 +260,20 @@ export default function Home() {
             </div>
           </BentoCard>
 
+          <BentoCard
+            title="조선관상"
+            description="관상으로 보는 전생 직업! 그대는 영의정? 기생? 암행어사?"
+            icon={<span className="text-3xl">📜</span>}
+            href="/joseon-face"
+            color="yellow"
+            size="large"
+          >
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-amber-700 to-red-800 text-white text-sm font-bold border-2 border-black">
+              <FireIcon className="w-4 h-4" />
+              HOT
+            </div>
+          </BentoCard>
+
         </div>
 
         {/* Info Archive Section */}

@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 export default function ConditionalFooter() {
     const pathname = usePathname();
 
-    // OOTD analyzer 페이지에서는 풋터를 렌더링하지 않음
-    if (pathname?.startsWith('/ootd-analyzer')) {
+    // OOTD analyzer와 Joseon Face 페이지에서는 풋터를 렌더링하지 않음
+    if (pathname?.startsWith('/ootd-analyzer') || pathname?.startsWith('/joseon-face')) {
         return null;
     }
 
