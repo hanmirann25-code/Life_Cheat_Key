@@ -19,6 +19,12 @@ const config: Config = {
         'pastel-mint': '#D4FFE8',        // 민트
         'pastel-peach': '#FFE0D4',       // 피치
 
+        // OOTD Analyzer 럭셔리 컬러
+        'luxury-gold': '#D4AF37',        // 골드
+        'luxury-rose': '#B76E79',        // 로즈 골드
+        'luxury-navy': '#1A1A2E',        // 네이비
+        'luxury-cream': '#FAF8F3',       // 크림
+
         // 네오 브루탈리즘 포인트 컬러
         'neon-yellow': '#FFEB3B',
         'neon-purple': '#9C27B0',

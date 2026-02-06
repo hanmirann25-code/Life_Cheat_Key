@@ -246,6 +246,19 @@ export default function Home() {
             size="small"
           />
 
+          <BentoCard
+            title="OOTD 무드 분석"
+            description="사진 한 장으로 분석하는 나의 패션 감성 테스트"
+            icon={<SparklesIcon className="w-8 h-8" />}
+            href="/ootd-analyzer"
+            color="pink"
+            size="large"
+          >
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold border-2 border-black">
+              <SparklesIcon className="w-4 h-4" />
+              NEW
+            </div>
+          </BentoCard>
 
         </div>
 
