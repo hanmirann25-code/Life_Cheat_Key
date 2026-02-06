@@ -7,6 +7,9 @@ import JoseonResultCard from '@/components/joseon/JoseonResultCard';
 import { extractFaceFeatures, matchJoseonJob, loadFaceDetectionModels } from '@/utils/joseon/faceAnalyzer';
 import { JoseonAnalysisResult } from '@/utils/joseon/jobData';
 
+// face-api.js는 브라우저 환경에서만 작동하므로 동적 렌더링 강제
+export const dynamic = 'force-dynamic';
+
 type PageState = 'landing' | 'upload' | 'analyzing' | 'result';
 
 export default function JoseonFacePage() {
