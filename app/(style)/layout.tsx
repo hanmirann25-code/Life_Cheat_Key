@@ -1,9 +1,5 @@
-'use client';
-
-import { usePathname } from 'next/navigation';
 import { Playfair_Display, Inter } from 'next/font/google';
-import OOTDHeader from '@/components/ootd/OOTDHeader';
-import OOTDFooter from '@/components/ootd/OOTDFooter';
+import StyleLayoutClient from './StyleLayoutClient';
 
 const playfair = Playfair_Display({
     subsets: ['latin'],
@@ -22,9 +18,6 @@ export default function StyleLayout({
 }: {
     children: React.ReactNode;
 }) {
-    const pathname = usePathname();
-    const isOOTDPage = pathname?.startsWith('/ootd-analyzer');
-
     return (
         <div className={`${playfair.variable} ${inter.variable} font-sans`}>
             {/* Kakao SDK */}
@@ -35,11 +28,7 @@ export default function StyleLayout({
                 async
             ></script>
 
-            {isOOTDPage && <OOTDHeader />}
-            <main className={isOOTDPage ? "pt-20" : ""}>
-                {children}
-            </main>
-            {isOOTDPage && <OOTDFooter />}
+            <StyleLayoutClient>{children}</StyleLayoutClient>
         </div>
     );
 }
