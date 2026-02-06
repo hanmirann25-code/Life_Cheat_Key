@@ -1,7 +1,18 @@
-import * as faceapi from '@vladmandic/face-api';
 import { FaceFeatures, JOSEON_JOBS, JoseonAnalysisResult, JoseonJob, FEATURE_JOB_MAPPING } from './jobData';
 
 let modelsLoaded = false;
+let faceapi: any = null;
+
+/**
+ * face-api.js 모듈 동적 로딩 (브라우저에서만)
+ */
+async function loadFaceAPI() {
+    if (faceapi) return faceapi;
+
+    // 동적 import로 브라우저에서만 로드
+    faceapi = await import('@vladmandic/face-api');
+    return faceapi;
+}
 
 /**
  * face-api.js 모델 로딩
@@ -11,11 +22,14 @@ export async function loadFaceDetectionModels(): Promise<void> {
 
     const MODEL_URL = '/models'; // public/models 폴더에 모델 파일 배치
 
+    // face-api 동적 로드
+    const api = await loadFaceAPI();
+
     try {
         await Promise.all([
-            faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
-            faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL),
-            faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
+            api.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
+            api.nets.faceLandmark68Net.loadFromUri(MODEL_URL),
+            api.nets.faceExpressionNet.loadFromUri(MODEL_URL),
         ]);
 
         modelsLoaded = true;
@@ -35,12 +49,15 @@ export async function extractFaceFeatures(imageFile: File): Promise<FaceFeatures
         await loadFaceDetectionModels();
     }
 
+    // face-api 동적 로드
+    const api = await loadFaceAPI();
+
     // 이미지를 HTMLImageElement로 변환
     const img = await loadImage(imageFile);
 
     // 얼굴 감지 및 랜드마크 추출
-    const detection = await faceapi
-        .detectSingleFace(img, new faceapi.TinyFaceDetectorOptions())
+    const detection = await api
+        .detectSingleFace(img, new api.TinyFaceDetectorOptions())
         .withFaceLandmarks()
         .withFaceExpressions();
 
@@ -73,8 +90,8 @@ function loadImage(file: File): Promise<HTMLImageElement> {
  * 랜드마크에서 얼굴 특징 수치 계산
  */
 function calculateFaceFeatures(
-    landmarks: faceapi.FaceLandmarks68,
-    box: faceapi.Box
+    landmarks: any, // faceapi.FaceLandmarks68
+    box: any // faceapi.Box
 ): FaceFeatures {
     const points = landmarks.positions;
 
@@ -123,7 +140,7 @@ function calculateFaceFeatures(
     const foreheadHeight = (leftEyebrow[0].y - box.y) / box.height;
 
     // 광대뼈 폭 (얼굴 가장 넓은 부분)
-    const maxJawWidth = Math.max(...jaw.map((p, i) =>
+    const maxJawWidth = Math.max(...jaw.map((p: any, i: any) =>
         i < jaw.length - 1 ? distance(p, jaw[jaw.length - 1 - i]) : 0
     ));
     const cheekboneWidth = normalize(maxJawWidth / box.width, 0.8, 1.2);
@@ -297,7 +314,7 @@ function generateWittyMessage(job: JoseonJob, features: FaceFeatures): string {
 
 // 유틸리티 함수들
 
-function distance(p1: faceapi.Point, p2: faceapi.Point): number {
+function distance(p1: any, p2: any): number { // faceapi.Point
     return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
 }
 
